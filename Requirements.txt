@@ -1,0 +1,25 @@
+Administration:
+    1. Rename objects:
+    - Account -> Customer
+    - Contact -> Employee
+
+    2. Create new fields on the Contact obj:
+    - FingerprintId (text 11 symbs)
+    - PortalUser (boolean)
+    - SelfRegistered (boolean)
+    - Birthday (date)
+    - Type (multi-picklist)
+        values: Technical, Hosting, Commercial, Social
+    - Department (picklist)
+        values: Engineering, Finance, Human Resources, IT, Logistics, etc...
+
+    3. Create new fields on the Account obj:
+    - VAT (text 10 with 2 capital letter at the beginning)
+    - Company Email Address (email)
+
+    4. Create Custom object "Access Right":
+    - Level (picklist)
+        values: 0,1,2,3
+    - Feature (picklist)
+        values: Weather
+    - Contact (master-detail)
