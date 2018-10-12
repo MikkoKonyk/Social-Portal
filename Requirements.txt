@@ -1,7 +1,7 @@
 Administration:
     1. Rename objects:
     - Account -> Customer
-    - Contact -> Employee
+    - Contact -> git sta
 
     2. Create new fields on the Contact obj:
     - FingerprintId (text 11 symbs)
