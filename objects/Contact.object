@@ -210,14 +210,102 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Job_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Job title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business Intelligence</fullName>
+                    <default>false</default>
+                    <label>Business Intelligence</label>
+                </value>
+                <value>
+                    <fullName>CRM Management</fullName>
+                    <default>false</default>
+                    <label>CRM Management</label>
+                </value>
+                <value>
+                    <fullName>Product Management</fullName>
+                    <default>false</default>
+                    <label>Product Management</label>
+                </value>
+                <value>
+                    <fullName>Sales/Service Desk/Commercial Backoffice/Call Center</fullName>
+                    <default>false</default>
+                    <label>Sales/Service Desk/Commercial Backoffice/Call Center</label>
+                </value>
+                <value>
+                    <fullName>Sales Leader</fullName>
+                    <default>false</default>
+                    <label>Sales Leader</label>
+                </value>
+                <value>
+                    <fullName>Sales Rep</fullName>
+                    <default>false</default>
+                    <label>Sales Rep</label>
+                </value>
+                <value>
+                    <fullName>Service Delivery (Trainer/Technical/Projects)</fullName>
+                    <default>false</default>
+                    <label>Service Delivery (Trainer/Technical/Projects)</label>
+                </value>
+                <value>
+                    <fullName>Product Leader</fullName>
+                    <default>false</default>
+                    <label>Product Leader</label>
+                </value>
+                <value>
+                    <fullName>Marketing Automation/Event Management/Lead Generation</fullName>
+                    <default>false</default>
+                    <label>Marketing Automation/Event Management/Lead Generation</label>
+                </value>
+                <value>
+                    <fullName>Human Resources</fullName>
+                    <default>false</default>
+                    <label>Human Resources</label>
+                </value>
+                <value>
+                    <fullName>IT/Application Support</fullName>
+                    <default>false</default>
+                    <label>IT/Application Support</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Languages__c</fullName>
         <externalId>false</externalId>
         <label>Languages</label>
-        <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>false</default>
+                    <label>Germany</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>LastCURequestDate</fullName>
