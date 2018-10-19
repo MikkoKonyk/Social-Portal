@@ -4,7 +4,9 @@ trigger Account on Account (before insert, before update) {
             acc.addError('VAT is incorrect, right pattern: XX000000000. 2 first symbols must be capitals (ISO-2 code of EU country of your company).');
             if (String.isBlank(acc.VAT__c)) {
                 acc.addError('VAT is required');
-
+                if (!acc.VAT__c.rightPad(8).isNumeric()) {
+                    acc.addError('All symbols in VAT after first 2 must be numeric, NOT letters.');
+                }
             }
         }
     }
