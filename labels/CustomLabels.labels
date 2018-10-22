@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>VAT_Required</fullName>
+        <categories>Account Trigger</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>VAT Required</shortDescription>
+        <value>VAT is required</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Required1</fullName>
+        <categories>Account Trigger</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>VAT Required1</shortDescription>
+        <value>VAT is incorrect, right pattern: XX000000000. 2 first symbols must be capitals (ISO-2 code of EU country of your company).</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Required2</fullName>
+        <categories>Account Trigger</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>VAT Required2</shortDescription>
+        <value>All symbols in VAT after first 2 must be numeric, NOT letters.</value>
+    </labels>
+</CustomLabels>
