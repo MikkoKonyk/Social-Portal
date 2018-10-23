@@ -4,9 +4,6 @@
 
 public with sharing class AccountService {
     public static void validateVAT(List<Account> accounts) {
-        if (accounts == null || accounts.isEmpty()) {
-            return;
-        }
         for (Account acc : accounts) {
             if (String.isBlank(acc.VAT__c)) {
                 acc.addError(Label.VAT_Required);
