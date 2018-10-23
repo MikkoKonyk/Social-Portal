@@ -3,6 +3,18 @@
  */
 
 public with sharing class AccountService {
+    public static void handleTrigger(System.TriggerOperation triggerOperation) {
+        switch on triggerOperation {
+            when BEFORE_INSERT, BEFORE_UPDATE {
+                List<Account> account = new List<Account>();
+                validateVAT(account);
+                System.debug('account>>>' + account);
+            }
+            when else {
+
+            }
+        }
+    }
     public static void validateVAT(List<Account> accounts) {
         for (Account acc : accounts) {
             if (String.isBlank(acc.VAT__c)) {
