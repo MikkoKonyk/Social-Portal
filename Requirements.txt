@@ -12,9 +12,11 @@ Administration:
         values: Technical, Hosting, Commercial, Social
     - Department (picklist)
         values: Engineering, Finance, Human Resources, IT, Logistics, etc...
+    - Job title (picklist)
+    - Languages (multi-picklist): as Employee can speak many languages. Add basic values
 
     3. Create new fields on the Account obj:
-    - VAT (text 10 with 2 capital letter at the beginning)
+    - VAT (text 10 with 2 capital letter at the beginning, all symbols after first 2 must be numeric, NOT letters.)
     - Company Email Address (email)
 
     4. Create Custom object "Access Right":
@@ -23,3 +25,32 @@ Administration:
     - Feature (picklist)
         values: Weather
     - Contact (master-detail)
+
+    5. Create Social Portal App in SF Classic & Lightning Experience views.
+       Add Customers, Employees tabs for now.
+       Make app as default for the user.
+
+Data Management:
+    1. Generate test data for the org: Account, Contact about 100 records with external tool and save as .csv
+    2. Import .csv file with test data to the org using Data Loader app or Dataloader.io
+    3. Anonymous script to to pulate some Account (based on your choice) with Contacts.
+        1 accs - 20 conts
+        2 accs - 15 conts
+        3 accs - 10 conts
+        4 accs - 5 conts
+        100 contacs in total should be separated per 10 accounts
+    4. Anonymous script to populate all Account records with VAT field, VAT field format "AA00000000". Each Account has to have different VAT.
+
+Development:
+1. Trigger on Account that checks if the VAT has 2 capital letters at the beginning when Account is created or updated.
+   - VAT field should be required.
+   - VAT field format "AA00000000" - where first 2 symbols is ISO of particular EU country.
+   Trigger must check if the user entered first 2 symbols as capital letters. If first 2 symbols are not letters - show error that they must be letters, ISO-2 code of EU country where the company is.
+
+2. Create VF Page with Apex controller to create/edit Contacts:
+   - Replace Standard page with VF page for New & Edit buttons for Contact
+   - Make sure Account is required field for every Contact
+   - SelfRegistered field is hidden until PortalUser field is checked
+   - Make sure sections are collapsible
+   - On save show message that save was successful, otherwise show error message with error
+
