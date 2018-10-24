@@ -3,12 +3,11 @@
  */
 
 public with sharing class AccountService {
-    public static void handleTrigger(System.TriggerOperation triggerOperation) {
+    public static void handleTrigger(List<Account> accounts, System.TriggerOperation triggerOperation) {
         switch on triggerOperation {
             when BEFORE_INSERT, BEFORE_UPDATE {
-                List<Account> account = new List<Account>();
-                validateVAT(account);
-                System.debug('account>>>' + account);
+                validateVAT(accounts);
+                System.debug('accounts1>>>' + accounts);
             }
             when else {
 
