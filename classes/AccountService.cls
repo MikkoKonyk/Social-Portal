@@ -22,7 +22,7 @@ public with sharing class AccountService {
             if (acc.VAT__c.length() != 10 || !acc.VAT__c.left(2).isAllUpperCase() || acc.VAT__c.left(2).isNumeric()) {
                 acc.addError(Label.VAT_Required1);
             }
-            if (String.isNotBlank(acc.VAT__c) && !acc.VAT__c.rightPad(8).isNumeric()) {
+            if (String.isNotBlank(acc.VAT__c) && !acc.VAT__c.right(8).isNumeric()) {
                 acc.addError(Label.VAT_Required2);
             }
         }
