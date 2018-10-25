@@ -4,15 +4,16 @@
 public with sharing class AccountHandler {
 
     public static void handleTrigger(List<Account> accounts, System.TriggerOperation triggerOperation) {
-
         switch on triggerOperation {
             when BEFORE_INSERT, BEFORE_UPDATE {
                 validateVAT(accounts);
+                System.debug('accounts1>>>' + accounts);
             }
-            when else {}
+            when else {
+
+            }
         }
     }
-
     public static void validateVAT(List<Account> accounts) {
         for (Account acc : accounts) {
             if (String.isBlank(acc.VAT__c)) {
