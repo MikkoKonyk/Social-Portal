@@ -435,7 +435,7 @@
     </fields>
     <fields>
         <fullName>PortalUser__c</fullName>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>PortalUser</label>
         <trackFeedHistory>false</trackFeedHistory>

@@ -15,14 +15,14 @@
             </apex:pageBlockSection>
 
             <apex:pageblocksection title="Company Information" columns="2" id="companyInfo">
-                <apex:inputfield value="{!Contact.Company__c}" required="true"/>
+                <apex:inputfield value="{!Contact.AccountId}" label="Company"/>
                 <apex:actionregion >
                     <apex:outputLabel value="Portal User" for="Portal User"/>
-                    <apex:inputfield value="{!Contact.PortalUser__c}">
+                    <apex:inputfield value="{!Contact.PortalUser__c}" >
                         <apex:actionsupport event="onclick" rerender="companyInfo"/>
                     </apex:inputfield>
                     <br/>
-                    <apex:outputLabel value="SelfRegistered" for="SelfRegistered"/>
+                    <apex:outputLabel value="SelfRegistered" for="SelfRegistered" rendered="{!Contact.PortalUser__c}"/>
                     <apex:inputfield value="{!Contact.SelfRegistered__c}" rendered="{!Contact.PortalUser__c}"/>
 
                 </apex:actionregion>
