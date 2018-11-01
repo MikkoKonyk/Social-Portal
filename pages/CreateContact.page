@@ -15,10 +15,10 @@
             </apex:pageBlockSection>
 
             <apex:pageblocksection title="Company Information" columns="2" id="companyInfo">
-                <apex:inputfield value="{!Contact.AccountId}" label="Company"/>
-                <apex:actionregion >
+                <apex:inputfield value="{!Contact.AccountId}" label="Company" required = "true"/>
+                <apex:actionregion>
                     <apex:outputLabel value="Portal User" for="Portal User"/>
-                    <apex:inputfield value="{!Contact.PortalUser__c}" >
+                    <apex:inputfield value="{!Contact.PortalUser__c}">
                         <apex:actionsupport event="onclick" rerender="companyInfo"/>
                     </apex:inputfield>
                     <br/>
@@ -35,7 +35,7 @@
                 <apex:inputfield value="{!Contact.Level__c}"/>
             </apex:pageblocksection>
 
-            <apex:pageBlockButtons >
+            <apex:pageBlockButtons>
 
                 <apex:commandButton value="Save" action="{!save}" id="saveButton"/>
                 <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton"/>
