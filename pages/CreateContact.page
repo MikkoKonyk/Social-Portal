@@ -16,7 +16,7 @@
 
             <apex:pageblocksection title="Company Information" columns="2" id="companyInfo">
                 <apex:inputfield value="{!Contact.Company__c}" required="true"/>
-                <apex:actionregion>
+                <apex:actionregion >
                     <apex:outputLabel value="Portal User" for="Portal User"/>
                     <apex:inputfield value="{!Contact.PortalUser__c}">
                         <apex:actionsupport event="onclick" rerender="companyInfo"/>
@@ -35,7 +35,7 @@
                 <apex:inputfield value="{!Contact.Level__c}"/>
             </apex:pageblocksection>
 
-            <apex:pageBlockButtons>
+            <apex:pageBlockButtons >
 
                 <apex:commandButton value="Save" action="{!save}" id="saveButton"/>
                 <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton"/>

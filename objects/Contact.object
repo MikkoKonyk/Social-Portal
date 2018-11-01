@@ -26,7 +26,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
-        <content>VFPageStandartControler</content>
+        <content>CreateContact</content>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
@@ -60,7 +60,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>NewContact</actionName>
-        <content>VFPageStandartControler</content>
+        <content>CreateContact</content>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
