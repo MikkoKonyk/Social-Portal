@@ -7,7 +7,7 @@ public class ContactCtrlExt {
     private Contact contact;
 
     public ContactCtrlExt(ApexPages.StandardController stdCtrl) {
-        contact = (Contact)stdCtrl.getRecord();
+        contact = (Contact) stdCtrl.getRecord();
         this.stdCtrl = stdCtrl;
     }
 

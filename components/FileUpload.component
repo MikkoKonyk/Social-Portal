@@ -1,0 +1,10 @@
+<apex:component controller="AttachmentCtrl">
+    <apex:attribute name="objId" required="true" type="String" description="The id of the object to add files" assignTo="{!recordId}"/>
+
+    <apex:form>
+        <apex:pageBlock title="Add files to Contact">
+            <apex:inputFile value="{!att.Body}" filename="{!att.Name}" accept="jpg, jpeg, jpe, png"/>
+            <apex:commandButton value="{!Label.Upload}" action="{!upload}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:component>
