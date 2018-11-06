@@ -1,5 +1,5 @@
-<apex:component controller="AttachmentCtrl">
-    <apex:attribute name="objId" required="true" type="String" description="The id of the object to add files" assignTo="{!recordId}"/>
+<apex:component controller="AttachmentCtrl" id="FileUpload">
+    <apex:attribute name="objId" type="String" description="The id of the object to manage files for" required="true" assignto="{!recordId}" />
 
     <apex:form>
         <apex:pageBlock title="Add files to Contact">
