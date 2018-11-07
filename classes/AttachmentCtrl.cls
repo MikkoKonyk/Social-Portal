@@ -21,8 +21,14 @@ public with sharing class AttachmentCtrl {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'File size must not be bigger than 1 Mb'));
             return null;
         }
-        Attachment att = new Attachment(Name = fileName, Body = this.body, ParentId = this.recordId, ContentType = this.contentType);
-        insert att;
+        Savepoint sp = Database.setSavepoint();
+        try {
+            insert new Attachment(Name = fileName, Body = this.body, ParentId = this.recordId, ContentType = this.contentType);
+        } catch(Exception e) {
+            Database.rollback(sp);
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.CONFIRM, e.getMessage()));
+            return null;
+        }
         ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.CONFIRM, 'File was added'));
         return null;
     }
