@@ -5,7 +5,7 @@
     <apex:form>
         <apex:pageBlock title="Add files to Contact">
             <apex:inputFile value="{!att.Body}" filename="{!att.Name}" accept="jpg, jpeg, jpe, png"/>
-            <apex:commandButton value="{!Label.Upload}" action="{!upload}"/>
+            <apex:commandButton value="{$Label.Upload}" action="{!upload}"/>
         </apex:pageBlock>
     </apex:form>
 </apex:component>
