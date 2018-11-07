@@ -2,21 +2,11 @@
 
     <apex:attribute name="objId" type="String" description="The id of the object to manage files for" required="true"
                     assignto="{!recordId}"/>
-
     <apex:form>
-<<<<<<< HEAD
-        <apex:pageMessages id="pageMessId"/>
-        <apex:pageBlock title="Add files to Contact" id="AddContact">
-            <apex:inputfile value="{!body}" filename="{!fileName}" filesize="{!fileSize}"
-                            contentType="{!contentType}"
-                            accept="image/jpg, image/jpeg, image/jpe, image/png"/>
-            <apex:commandButton reRender="pageMessId" value="Upload" action="{!upload}"/>
-=======
         <apex:pageMessages />
         <apex:pageBlock title="Add files to Contact">
             <apex:inputfile value="{!body}" filename="{!fileName}" filesize="{!fileSize}" contentType="{!contentType}" accept="image/jpg, image/jpeg, image/jpe, image/png"/>
             <apex:commandButton value="Upload" action="{!upload}" />
->>>>>>> c09b7356028ef70abca25070c67327568a115185
         </apex:pageBlock>
     </apex:form>
 </apex:component>
