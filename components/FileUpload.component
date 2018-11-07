@@ -3,9 +3,10 @@
     <apex:attribute name="objId" type="String" description="The id of the object to manage files for" required="true"
                     assignto="{!recordId}"/>
     <apex:form>
+        <apex:pageMessages />
         <apex:pageBlock title="Add files to Contact">
-            <apex:inputFile value="{!att.Body}" filename="{!att.Name}" accept="jpg, jpeg, jpe, png"/>
-            <apex:commandButton value="{$Label.Upload}" action="{!upload}"/>
+            <apex:inputfile value="{!body}" filename="{!fileName}" filesize="{!fileSize}" contentType="{!contentType}" accept="image/jpg, image/jpeg, image/jpe, image/png"/>
+            <apex:commandButton value="Upload" action="{!upload}"/>
         </apex:pageBlock>
     </apex:form>
 </apex:component>
