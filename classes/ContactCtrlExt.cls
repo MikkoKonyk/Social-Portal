@@ -16,6 +16,6 @@ public class ContactCtrlExt {
     }
 
     public PageReference cancel() {
-        return new PageReference('/' + Contact.Id);
+        return new PageReference('/');
     }
 }
