@@ -7,7 +7,7 @@ public class ContactCtrlExt {
     private Contact contact;
 
     public ContactCtrlExt(ApexPages.StandardController stdCtrl) {
-        contact = (Contact)stdCtrl.getRecord();
+        contact = (Contact) stdCtrl.getRecord();
         this.stdCtrl = stdCtrl;
     }
 
@@ -16,6 +16,14 @@ public class ContactCtrlExt {
     }
 
     public PageReference cancel() {
-        return new PageReference('/' + Contact.Id);
+        if (contact.Id != null) {
+            return new PageReference('/' + contact.Id);
+        }
+        if (contact.Id == null) {
+            PageReference pageRef = new PageReference('/003/o');
+            pageRef.setRedirect(true);
+            return pageRef;
+        }
+        return null;
     }
 }
