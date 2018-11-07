@@ -1,6 +1,7 @@
-<apex:component controller="AttachmentCtrl" id="FileUpload">
-    <apex:attribute name="objId" type="String" description="The id of the object to manage files for" required="true" assignto="{!recordId}" />
+<apex:component controller="AttachmentCtrl" id="FileUpload" allowDML="true">
 
+    <apex:attribute name="objId" type="String" description="The id of the object to manage files for" required="true"
+                    assignto="{!recordId}"/>
     <apex:form>
         <apex:pageBlock title="Add files to Contact">
             <apex:inputFile value="{!att.Body}" filename="{!att.Name}" accept="jpg, jpeg, jpe, png"/>

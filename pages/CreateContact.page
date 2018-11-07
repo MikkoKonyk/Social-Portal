@@ -42,9 +42,9 @@
 
         </apex:pageBlock>
 
-        <apex:outputPanel rendered="{!NOT(Contact.Id == NULL)}">
-            <c:FileUpload objId="{!Contact.Id}"/>
-        </apex:outputPanel>
-
     </apex:form>
+
+    <apex:outputPanel rendered="{!NOT(Contact.Id == NULL)}">
+        <c:FileUpload objId="{!Contact.Id}"/>
+    </apex:outputPanel>
 </apex:page>
