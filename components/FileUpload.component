@@ -4,9 +4,11 @@
                     assignto="{!recordId}"/>
     <apex:form>
         <apex:pageMessages />
-        <apex:pageBlock title="Add files to Contact">
+        <apex:pageBlock title="Add files to Contact" id="AddContact">
             <apex:inputfile value="{!body}" filename="{!fileName}" filesize="{!fileSize}" contentType="{!contentType}" accept="image/jpg, image/jpeg, image/jpe, image/png"/>
-            <apex:commandButton value="Upload" action="{!upload}"/>
+            <apex:actionRegion>
+            <apex:commandButton reRender="AddContact" value="Upload" action="{!upload}"/>
+            </apex:actionRegion>
         </apex:pageBlock>
     </apex:form>
 </apex:component>
