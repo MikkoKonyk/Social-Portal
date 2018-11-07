@@ -1,21 +1,19 @@
-/**
- * Created by ADemchuk on 06.11.2018.
- */
-
 public with sharing class AttachmentCtrl {
-    public String recordId { get; set; }
+
+    public final Integer MAX_FILE_SIZE = 100000;
+
+    public String recordId     { get; set; }
     public transient Blob body { get; set; }
-    public Integer fileSize { get; set; }
-    public String fileName { get; set; }
-    public String contentType { get; set; }
+    public Integer fileSize    { get; set; }
+    public String fileName     { get; set; }
+    public String contentType  { get; set; }
 
     public PageReference upload() {
-        System.debug(fileSize);
         if (String.isBlank(fileName)) {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Please select a file to Contact'));
             return null;
         }
-        if (fileSize > 1024) {
+        if (fileSize > MAX_FILE_SIZE) {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'File size must not be bigger than 1 Mb'));
             return null;
         }
