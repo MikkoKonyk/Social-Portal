@@ -13,11 +13,7 @@ public with sharing class AttachmentCtrl {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Please select a file to Contact'));
             return null;
         }
-<<<<<<< HEAD
-        if (fileSize > 1000000) {
-=======
         if (fileSize > MAX_FILE_SIZE) {
->>>>>>> c09b7356028ef70abca25070c67327568a115185
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'File size must not be bigger than 1 Mb'));
             return null;
         }
