@@ -21,6 +21,14 @@
         <name>Community</name>
     </types>
     <types>
+        <members>*</members>
+        <name>CommunityTemplateDefinition</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CommunityThemeDefinition</name>
+    </types>
+    <types>
         <members>Account</members>
         <members>AccountCleanInfo</members>
         <members>AccountContactRole</members>
@@ -140,14 +148,6 @@
         <members>StandardAul</members>
         <members>Work%2Ecom Only User</members>
         <name>Profile</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ProfilePasswordPolicy</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ProfileSessionSetting</name>
     </types>
     <version>42.0</version>
 </Package>
