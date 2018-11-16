@@ -17,10 +17,6 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
         <members>Account</members>
         <members>AccountCleanInfo</members>
         <members>AccountContactRole</members>
@@ -83,8 +79,22 @@
         <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
+        <members>CompanyProfile_Edit</members>
+        <members>CompanyProfile_Read</members>
+        <members>MyProfile_Edit</members>
+        <members>MyProfile_Read</members>
+        <members>UserManagement_Edit</members>
+        <members>UserManagement_Read</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Developer</members>
+        <members>Lightning_Experience_User</members>
+        <members>Portal_User</members>
+        <members>Social_Portal_Developer</members>
+        <members>Unassigned</members>
+        <name>PermissionSet</name>
     </types>
     <version>42.0</version>
 </Package>

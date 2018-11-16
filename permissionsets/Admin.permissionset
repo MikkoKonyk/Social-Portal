@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>CompanyProfile_Edit</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>CompanyProfile_Read</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>MyProfile_Edit</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>MyProfile_Read</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>UserManagement_Edit</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>UserManagement_Read</name>
+    </customPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Admin</label>
+</PermissionSet>
