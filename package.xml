@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>*</members>
@@ -17,8 +17,16 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>Internal Zone</members>
+        <name>Community</name>
+    </types>
+    <types>
         <members>*</members>
-        <name>AuraDefinitionBundle</name>
+        <name>CommunityTemplateDefinition</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CommunityThemeDefinition</name>
     </types>
     <types>
         <members>Account</members>
@@ -83,8 +91,63 @@
         <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
+        <members>CompanyProfile_Edit</members>
+        <members>CompanyProfile_Read</members>
+        <members>MyProfile_Edit</members>
+        <members>MyProfile_Read</members>
+        <members>UserManagement_Edit</members>
+        <members>UserManagement_Read</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Developer</members>
+        <members>Lightning_Experience_User</members>
+        <members>Portal_User</members>
+        <members>Social_Portal_Developer</members>
+        <members>Unassigned</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Analytics Cloud Integration User</members>
+        <members>Analytics Cloud Security User</members>
+        <members>Authenticated Website</members>
+        <members>Chatter External User</members>
+        <members>Chatter Free User</members>
+        <members>Chatter Moderator User</members>
+        <members>ContractManager</members>
+        <members>Cross Org Data Proxy User</members>
+        <members>Custom%3A Marketing Profile</members>
+        <members>Custom%3A Sales Profile</members>
+        <members>Custom%3A Support Profile</members>
+        <members>Customer Community Login User</members>
+        <members>Customer Community Plus Login User</members>
+        <members>Customer Community Plus User</members>
+        <members>Customer Community User</members>
+        <members>Customer Portal Manager Custom</members>
+        <members>Customer Portal Manager Standard</members>
+        <members>External Identity User</members>
+        <members>Force%2Ecom - App Subscription User</members>
+        <members>Force%2Ecom - Free User</members>
+        <members>Gold Partner User</members>
+        <members>Guest</members>
+        <members>High Volume Customer Portal User</members>
+        <members>HighVolumePortal</members>
+        <members>Identity User</members>
+        <members>MarketingProfile</members>
+        <members>Partner App Subscription User</members>
+        <members>Partner Community Login User</members>
+        <members>Partner Community User</members>
+        <members>PlatformPortal</members>
+        <members>ReadOnly</members>
+        <members>SF Social Portal Profile</members>
+        <members>Silver Partner User</members>
+        <members>SolutionManager</members>
+        <members>Standard</members>
+        <members>StandardAul</members>
+        <members>Work%2Ecom Only User</members>
+        <name>Profile</name>
     </types>
     <version>42.0</version>
 </Package>
