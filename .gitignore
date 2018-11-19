@@ -1,7 +1,10 @@
 /.localHistory
 /.AnonymousApex
+
 permissionsets/Developer.permissionset
+
 permissionsets/Lightning_Experience_User.permissionset
+
 permissionsets/Social_Portal_Developer.permissionset
 classes/ChangePasswordController.cls
 classes/ChangePasswordController.cls-meta.xml
