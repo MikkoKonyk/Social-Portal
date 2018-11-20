@@ -1,0 +1,29 @@
+<apex:component>
+
+    <styles>
+        .sp-header-main{
+            background: #5a5a5a;
+            color: white;
+        }
+    </styles>
+
+    <div class="slds-grid slds-gutters sp-header-main slds-align_absolute-center">
+    
+        <div class="slds-col slds-size_2-of-8">
+            <span>SOCIAL PORTAL</span>
+        </div>
+  
+    <div class="slds-col slds-size_5-of-8">
+        <span>
+        <button>FEATURES</button>
+    </span>
+  </div>
+
+<div class="slds-col slds-size_1-of-8">
+    <span>
+        <button>HELP</button>
+    </span>
+</div>
+</div>
+
+</apex:component>
