@@ -1,4 +1,4 @@
-<apex:component>
+<apex:component controller="UserCtrlPhoto">
 <html xmlns:link="https://www.lightningdesignsystem.com/icons">
     
     <style>
@@ -44,7 +44,7 @@
         
                 <div>
                     <span class="slds-icon_container slds-icon-utility-search" title="search">
-                        <svg aria-hidden="true" class ="slds-icon" style="width: 1rem" xmlns:xlink="https://www.lightningdesignsystem.com/icons">
+                        <svg aria-hidden="true"  class ="slds-icon" style="width: 1rem" xmlns:xlink="https://www.lightningdesignsystem.com/icons">
                             <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
                         </svg>
                     </span>
@@ -54,7 +54,7 @@
         <div class="slds-col_bump-left slds-size_1-of-4">
             
             <div class="image slds-container_large slds-align_absolute-center">
-                <span>IMAGE</span>       
+                 <apex:image value="{!userPhoto}"/>  
             </div>
         
         </div>
