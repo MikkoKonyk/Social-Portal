@@ -43,8 +43,8 @@
                 </div>
         
                 <div>
-                    <span class="slds-icon_container slds-icon-utility-search" title="Search">
-                        <svg aria-hidden="true" class ="slds-icon" xmlns:xlink="https://www.lightningdesignsystem.com/icons">
+                    <span class="slds-icon_container slds-icon-utility-search" title="search">
+                        <svg aria-hidden="true" class ="slds-icon" style="width: 1rem" xmlns:xlink="https://www.lightningdesignsystem.com/icons">
                             <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
                         </svg>
                     </span>
