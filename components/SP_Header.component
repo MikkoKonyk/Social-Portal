@@ -14,9 +14,13 @@
         }
         a.features {
             color: white;
+            font-variant-caps: all-petite-caps;
+            font-size: medium;
         }
         a.help {
             color: white;
+            font-variant-caps: all-petite-caps;
+            font-size:medium;
         }
         .roundImg {
             width: 3rem;
