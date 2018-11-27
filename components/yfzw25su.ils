@@ -1,0 +1,82 @@
+<apex:component >
+    <html>
+        <style>
+        .sp-header-main {
+            background: black;
+            color: white;
+            height: 100px;
+        }
+        div.icons {
+                background: gray;
+            }
+        div.social {
+            
+        }
+        </style>
+         <div class="sp-header-main">
+
+            <div class="slds-grid slds-wrap">
+                
+                <div class="slds-col slds-grid slds-size_1-of-2">
+
+                        <div class="social slds-col slds-size_1-of-2 slds-align_absolute-center">
+                            <span>SOCIAL PORTAL</span>
+                        </div>
+                        
+                         <div class="icons slds-col slds-size_1-of-2">
+                            <span>ICONS (fb, linkedln, youtube, twitter)</span>
+                        </div>
+
+                    </div>
+                </div>
+               <div class="slds-grid slds-wrap">
+                 <div class="slds-col slds-grid slds-size_1-of-2">
+
+                        <div class="slds-col slds-size_1-of-2">
+                            <span></span>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-6">
+                            <span>
+                                <a class="cookies" name="CookiesPolicy">{!$Label.Cookies_Policy}</a>
+                            </span>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-6">
+                            <span>
+                                <a class="entity" name="LegalEntity">{!$Label.Legal_Entity}</a>
+                            </span>
+                       </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="protection" name="ProtectionPolicy">{!$Label.Protection_Policy}</a>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="disclaimer" name="LegalDisclaimer">{!$Label.Legal_Disclaimer}</a>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="web" name="WebPrivacyPolicy">{!$Label.Web_Privacy_Policy}</a>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="tax" name="Tax">{!$Label.Tax}</a>
+                    </span>
+                </div>
+        
+                
+        </div>
+
+        
+            </div>
+        </div>
+    </html>
+</apex:component>

@@ -1,0 +1,145 @@
+<apex:component >
+    <html>
+        <style>
+        .sp-header-main {
+            background: black;
+            color: white;
+            height: 250px;
+        }
+        div.box {
+            height: 50px;
+        }
+            div.icons {
+                background: white;
+                color: black;
+                font-weight: 400;
+                font-size: medium;
+                height: 40px;
+            }
+        div.social {
+            font-weight: 500;
+            font-size: large;
+        }
+        div.options {
+            height: 70px;
+        }
+        a.cookies {
+            color: white;
+        }
+            a.entity {
+                color: white;
+            }
+            a.protection {
+                color: white;
+            }
+            a.disclaimer {
+                color: white;
+            }
+            a.web {
+                color: white;
+            }
+            a.tax {
+                color: white;
+            }
+        </style>
+         <div class="sp-header-main">
+
+            <div class="slds-grid slds-wrap">
+                
+                <div class="box slds-col slds-grid slds-size_1-of-2">
+
+                        <div class="social slds-col slds-size_1-of-2 slds-align_absolute-center">
+                            <span>SOCIAL PORTAL</span>
+                        </div>
+                        
+                         <div class="icons slds-col slds-size_1-of-2 slds-align_absolute-center">
+                            <span>ICONS (fb, linkedln, youtube, twitter)</span>
+                        </div>
+
+                    </div>
+                </div>
+               <div class="options slds-grid slds-wrap">
+                 <div class="slds-col slds-grid slds-size_1-of-2">
+
+                        <div class="slds-col slds-size_1-of-2">
+                            <span></span>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-6">
+                            <span>
+                                <a class="cookies" name="CookiesPolicy">{!$Label.Cookies_Policy}</a>
+                            </span>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-6">
+                            <span>
+                                <a class="entity" name="LegalEntity">{!$Label.Legal_Entity}</a>
+                            </span>
+                       </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="protection" name="ProtectionPolicy">{!$Label.Protection_Policy}</a>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="disclaimer" name="LegalDisclaimer">{!$Label.Legal_Disclaimer}</a>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="web" name="WebPrivacyPolicy">{!$Label.Web_Privacy_Policy}</a>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6">
+                    <span>
+                        <a class="tax" name="Tax">{!$Label.Tax}</a>
+                    </span>
+                </div>
+        
+                
+        </div>
+
+        
+            </div>
+
+             <div class="slds-grid slds-wrap">
+                
+                <div class="slds-col slds-grid slds-size_1-of-2">
+
+                        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center">
+                            <span></span>
+                        </div>
+                        
+                         <div class="slds-col slds-size_1-of-2">
+                            <span>@ Copyright 2018 Social Portal. All right reserved</span>
+                        </div>
+
+                    </div>
+                </div>
+
+             <div class="slds-grid slds-wrap">
+                
+                <div class="slds-col slds-grid slds-size_1-of-2">
+
+                        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center">
+                            <span></span>
+                        </div>
+                        
+                         <div class="slds-col slds-size_1-of-1">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                        </div>
+
+                    </div>
+                </div>
+
+        </div>
+    </html>
+</apex:component>
