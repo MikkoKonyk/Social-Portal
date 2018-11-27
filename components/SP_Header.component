@@ -6,6 +6,7 @@
             background: black;
             color: white;
             height: 60px;
+            width: 1000px;
         }
         div.social {
             font-size: large;
@@ -16,15 +17,23 @@
         a.help {
             color: white;
         }
-        div.image {
-            color: white;
-            min-height: 30px;
+        .roundImg {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            max-width: none;
+            background-color: white;
+        }
+        div.photo {
+            background-color: gray;
+            width: 100px;
+            height: 60px;
         }
     </style>
 
     <div class="slds-grid slds-gutters sp-header-main slds-align_absolute-center">
         
-        <div class="slds-grid slds-size_2-of-4">
+        <div class="slds-grid slds-size_3-of-5">
                 
                 <div class="social slds-container_large slds-align_absolute-center">
                     <span>SOCIAL PORTAL</span>
@@ -51,10 +60,10 @@
                 </div>
         </div>
         
-        <div class="slds-col_bump-left slds-size_1-of-4">
+        <div class="slds-col_bump-left slds-size_1-of-5">
             
-            <div class="image slds-container_large slds-align_absolute-center">
-                 <apex:image value="{!userPhoto}"/>  
+            <div class="photo slds-container_large slds-align_absolute-center">
+                 <apex:image value="{!userPhoto}" styleclass="roundImg"/>  
             </div>
         
         </div>
