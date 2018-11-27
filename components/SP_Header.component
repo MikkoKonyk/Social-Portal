@@ -1,4 +1,4 @@
-<apex:component controller="UserCtrlPhoto">
+<apex:component controller="SP_HeaderCtrl">
 <html xmlns:link="https://www.lightningdesignsystem.com/icons">
     
     <style>
@@ -6,7 +6,6 @@
             background: black;
             color: white;
             height: 60px;
-            width: 1000px;
         }
         div.social {
             font-size: large;
@@ -34,11 +33,15 @@
             width: 100px;
             height: 60px;
         }
+        div.box {
+            border-right: 3px solid white;
+            height: 60px;
+        }
     </style>
 
     <div class="slds-grid slds-gutters sp-header-main slds-align_absolute-center">
         
-        <div class="slds-grid slds-size_1-of-4" style="border-right: 3px solid white; height: 60px">
+        <div class="box slds-grid slds-size_1-of-4">
                 
                 <div class="social slds-container_large slds-align_absolute-center">
                     <span>SOCIAL PORTAL</span>
@@ -70,7 +73,7 @@
         <div class="slds-col_bump-left">
             
             <div class="photo slds-container_large slds-align_absolute-center">
-                 <apex:image value="{!userPhoto}" styleclass="roundImg"/>  
+                <apex:image value="{!userPhoto}" styleclass="roundImg"/>  
             </div>
         
         </div>
