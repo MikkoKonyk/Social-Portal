@@ -1,7 +1,7 @@
 <apex:component >
     <html>
         <style>
-            .sp-header-main {
+            .sp-footer-main {
                 background: black;
                 color: white;
                 height: 270px;
@@ -9,7 +9,7 @@
             div.first {
                 height: 70px;
             }
-            div.box {
+            div.contain {
                 height: 50px;
             }
             div.icons {
@@ -51,11 +51,11 @@
                 height: 80px;
             }
         </style>
-         <div class="sp-header-main">
+         <div class="sp-footer-main">
 
             <div class="first slds-grid slds-wrap">
                 
-                <div class="box slds-col slds-grid slds-size_1-of-2">
+                <div class="contain slds-col slds-grid slds-size_1-of-2">
 
                         <div class="social slds-col slds-size_1-of-2 slds-align_absolute-center">
                             <span>SOCIAL PORTAL</span>
