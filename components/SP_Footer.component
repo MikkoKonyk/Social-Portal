@@ -1,14 +1,17 @@
 <apex:component >
     <html>
         <style>
-        .sp-header-main {
-            background: black;
-            color: white;
-            height: 250px;
-        }
-        div.box {
-            height: 50px;
-        }
+            .sp-header-main {
+                background: black;
+                color: white;
+                height: 270px;
+            }
+            div.first {
+                height: 70px;
+            }
+            div.box {
+                height: 50px;
+            }
             div.icons {
                 background: white;
                 color: black;
@@ -16,16 +19,16 @@
                 font-size: medium;
                 height: 40px;
             }
-        div.social {
-            font-weight: 500;
-            font-size: large;
-        }
-        div.options {
-            height: 70px;
-        }
-        a.cookies {
-            color: white;
-        }
+            div.social {
+                font-weight: 500;
+                font-size: large;
+            }
+            div.options {
+                height: 70px
+            }
+            a.cookies {
+                color: white;
+            }
             a.entity {
                 color: white;
             }
@@ -41,10 +44,16 @@
             a.tax {
                 color: white;
             }
+            div.copyright {
+                height: 30px;
+            }
+            div.last {
+                height: 80px;
+            }
         </style>
          <div class="sp-header-main">
 
-            <div class="slds-grid slds-wrap">
+            <div class="first slds-grid slds-wrap">
                 
                 <div class="box slds-col slds-grid slds-size_1-of-2">
 
@@ -107,7 +116,7 @@
         
             </div>
 
-             <div class="slds-grid slds-wrap">
+             <div class="copyright slds-grid slds-wrap">
                 
                 <div class="slds-col slds-grid slds-size_1-of-2">
 
@@ -122,7 +131,7 @@
                     </div>
                 </div>
 
-             <div class="slds-grid slds-wrap">
+             <div class="last slds-grid slds-wrap">
                 
                 <div class="slds-col slds-grid slds-size_1-of-2">
 
