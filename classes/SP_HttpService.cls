@@ -1,29 +1,51 @@
 public class SP_HttpService {
-    public String city { get; set; }
-    public String code { get; set; }
-    public String apiKey = 'd6e0ebc77d4107db718d04dbb2e8c24a';
+	public static final String settingName = 'Weather_WS_Settings';
 
-    public SP_HttpService() {
+	private static Weather_WS_Settings__mdt getConfig(String configName) {
+		Weather_WS_Settings__mdt config = [SELECT API_Key__c, EndPoint__c FROM Weather_WS_Settings__mdt WHERE Name = :configName LIMIT 1];
+		if (null == config) {
+			throw new WeatherServiceException('ERROR');
+		}
+		return config;
+	}
 
-        User user = [SELECT City FROM User WHERE Id = :UserInfo.getUserId()];
-        this.city = user.City;
+	public static HttpResponse getResponse(String city) {
+		Weather_WS_Settings__mdt config = getConfig(settingName);
+		Http http = new Http();
+		HttpRequest request = new HttpRequest();
+		request.setEndpoint(config.EndPoint__c + city + '&units=metric' + '&APPID=' + config.API_Key__c);
+		request.setMethod('GET');
+		HttpResponse response = http.send(request);
 
-        Http http = new Http();
-        HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&APPID=' + apiKey);
-        request.setMethod('GET');
-        HttpResponse response = http.send(request);
-    }
+		return response;
+	}
 
-    class WheatherDetails {
-        public String temperature { get; set; }
-        public String humidity { get; set; }
-        public String windPower { get; set; }
+	public static WheatherDetails getWeatherInfo(String city) {
+		HttpResponse response = getResponse(city);
 
-        public WheatherDetails(String temperature, String humidity, String windPower) {
-            this.temperature = temperature;
-            this.humidity = humidity;
-            this.windPower = windPower;
-        }
-    }
+		WheatherDetails wheatherInfo = new WheatherDetails(temperature, humidity, pressure);
+		Map results = (Map) JSON.deserializeUntyped(response.getBody);
+
+		city = String.valueOf(response.get('name'));
+		temp = String.valueOf(results.get('temp'));
+		humidity = String.valueOf(results.get('humidity'));
+		pressure = String.valueOf(results.get('pressure'));
+
+		return wheatherInfo;
+	}
+
+	public class WheatherDetails {
+		public String temp { get; set; }
+		public String humidity { get; set; }
+		public String pressure { get; set; }
+
+		public WheatherDetails(String temp, String humidity, String pressure) {
+			this.temp = temp;
+			this.humidity = humidity;
+			this.pressure = pressure;
+		}
+	}
+
+	public class WeatherServiceException extends Exception {
+	}
 }
