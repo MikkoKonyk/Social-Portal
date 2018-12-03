@@ -29,6 +29,10 @@
         <name>CommunityThemeDefinition</name>
     </types>
     <types>
+        <members>Weather_WS_Settings.Weather_WS_Settings</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
         <members>Account</members>
         <members>AccountCleanInfo</members>
         <members>AccountContactRole</members>
