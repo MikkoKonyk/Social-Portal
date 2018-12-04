@@ -14,11 +14,11 @@ public class SP_WeatherService {
 	public WeatherDetails makeCalloutByCity(final String city) {
         HttpResponse response = HttpService.makeGetRequest(this.configs[0].EndPoint__c + city + '&units=metric' + '&APPID=' + this.configs[0].API_Key__c + '&mode=json');
         if (String.isEmpty(response.getBody())) {
-            return null; //TODO: throw appropriate error from CustomException
+             throw new CustomException(String.format(CustomException.NO_METADATA_BY_NAME, new List<String> { OPEN_WEATHER_SETTING }));
         }
 		Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
         if (results.isEmpty()) {
-            return null; //TODO: throw appropriate error from CustomException
+             throw new CustomException(String.format(CustomException.NO_METADATA_BY_NAME, new List<String> { OPEN_WEATHER_SETTING }));
         }
 		return new WeatherDetails((String) results.get('temp'), (String) results.get('humidity'), (String) results.get('pressure'));
 	}

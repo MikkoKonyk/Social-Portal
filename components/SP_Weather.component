@@ -1,3 +1,5 @@
 <apex:component controller="SP_WeatherCtrl">
-
+    <html>
+        
+    </html>
 </apex:component>
