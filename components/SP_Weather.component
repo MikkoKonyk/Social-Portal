@@ -10,11 +10,15 @@
     
     <script type="text/javascript">
         function getWeather() {
-            Visualforce.remoting.City.invokeAction(
-              
-                cityName,
+            Visualforce.remoting.Manager.invokeAction(
+              '{!$RemoteAction.SP_WeatherCtrl.getWeatherByCity}',
+                
                 function (result, event){
-                    
+        if (event.status) {
+        console.log(result);
+        alert(result);
+        } else {
+      
         }
     </script>
 </apex:component>
