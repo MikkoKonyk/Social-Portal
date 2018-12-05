@@ -1,5 +1,20 @@
 <apex:component controller="SP_WeatherCtrl">
-    <html>
-        
-    </html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript">
+        function getWeather() {
+            Visualforce.remoting.City.invokeAction(
+                '{!$RemoteAction.SP_WeatherCtrl.getCity}',
+                cityName,
+                function (result, event){
+                    
+        }
+    </script>
 </apex:component>
