@@ -5,7 +5,7 @@ public class SP_WeatherService {
 	private List<Weather_WS_Settings__mdt> configs;
 
 	public SP_WeatherService() {
-		this.configs = [SELECT API_Key__c, EndPoint__c FROM Weather_WS_Settings__mdt WHERE MasterLabel = :OPEN_WEATHER_SETTING];
+		this.configs = [SELECT API_Key__c, EndPoint__c FROM Weather_WS_Settings__mdt WHERE DeveloperName = :OPEN_WEATHER_SETTING];
 		if (this.configs.isEmpty()) {
 			throw new CustomException(String.format(CustomException.NO_METADATA_BY_NAME, new List<String> { OPEN_WEATHER_SETTING }));
 		}
