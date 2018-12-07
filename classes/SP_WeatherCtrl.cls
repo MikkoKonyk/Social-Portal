@@ -9,8 +9,9 @@ public class SP_WeatherCtrl {
             weatherInfo = new SP_WeatherService().makeCalloutByCity(city);
             System.debug('weatherInfo>>>' + weatherInfo);
         } catch (Exception e) {
-            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, e.getMessage()));
+            throw new CustomException(e.getMessage());
         }
+        System.debug('result >>> ' + weatherInfo);
         return weatherInfo;
     }
 }

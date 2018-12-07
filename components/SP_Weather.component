@@ -1,5 +1,28 @@
 <apex:component controller="SP_WeatherCtrl">
-    <html>
-        
-    </html>
+
+    <button onclick ="getWeather();">Get Weather</button>
+    <div id="temperatureId">Temperature </div>
+    <div id="humidityId">Humidity </div>
+    <div id="pressureId">Pressure </div>
+    
+    
+    <script type="text/javascript">
+        function getWeather() {
+            var city = 'London';
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SP_WeatherCtrl.getWeatherByCity}', //function definition
+                city,  //input parameters
+                function (result, event) { //callback result
+                    if (event.status) { //handle result
+                        document.getElementById('temperatureId').innerHTML += result.temp;
+                        document.getElementById('humidityId').innerHTML +=  result.humidity;
+                        document.getElementById('pressureId').innerHTML +=  result.pressure;
+                        console.log(JSON.stringify(result));
+                        alert(JSON.stringify(result));
+                    } else { //handle error
+
+                    }
+                }, { buffer: true, escape: true, timeout: 120000 });
+        }
+    </script>
 </apex:component>
