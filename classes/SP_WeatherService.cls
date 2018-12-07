@@ -17,49 +17,25 @@ public class SP_WeatherService {
 		if (String.isEmpty(response.getBody())) {
 			throw new CustomException(CustomException.RESPONSE_EMPTY);
 		}
-<<<<<<< HEAD
-		//Map<String, Object> result = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
-		//System.debug(JSON.serialize(result));
-
-		Map<String, Object> obj = (Map<String, Object>) JSON.deserializeUntyped(body);
-		List<Object> items = (List<Object>) obj.get('items');
-
-		for (Object item : items) {
-			result.add(parseItem(item));
-		}
-=======
 		Map<String, Object> result = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
 		System.debug('raw>>> ' + result);
-		System.debug('city property>>> ' + result.get('city'));
-		System.debug('all properties>>> ' + result.get('list'));
+		System.debug('city property>>> ' + result.get('main'));
 
-        List<Object> items = (List<Object>) result.get('list');
-
-        for (Object item : items) {
-            System.debug('object node >>>' + item);
-            parseItem(item);
-        }
->>>>>>> 0438bd4dea548f2b7128dc85e72dab493f4e2581
+        Map<String, Object> items = (Map<String, Object>) result.get('main');
 
 		if (result.isEmpty()) {
 			throw new CustomException(CustomException.DESERIALIZED_RESULT_EMPTY);
 		}
-		return new WeatherDetails((String) result.get('temp'), (String) result.get('humidity'), (String) result.get('pressure'));
+		return new WeatherDetails((Decimal)items.get('temp'), (Decimal)items.get('humidity'), (Decimal)items.get('pressure'));
 
 	}
 
-    private static WeatherDetails parseItem(Object item) {
-        WeatherDetails toReturn = new WeatherDetails();
-        //TODO: parse elements to get required data
-        return toReturn;
-    }
-
 	public class WeatherDetails {
-		public String temp { get; set; }
-		public String humidity { get; set; }
-		public String pressure { get; set; }
+		public Decimal temp { get; set; }
+		public Decimal humidity { get; set; }
+		public Decimal pressure { get; set; }
 
-		public WeatherDetails(String temp, String humidity, String pressure) {
+		public WeatherDetails(Decimal temp, Decimal humidity, Decimal pressure) {
 			this.temp = temp;
 			this.humidity = humidity;
 			this.pressure = pressure;
