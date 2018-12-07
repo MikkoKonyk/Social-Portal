@@ -13,14 +13,25 @@ public class SP_WeatherService {
 
 	public WeatherDetails makeCalloutByCity(final String city) {
 		HttpResponse response = HttpService.makeGetRequest(this.configs[0].EndPoint__c + 'q=' + city + '&units=metric' + '&APPID=' + this.configs[0].API_Key__c + '&mode=json');
+		System.debug('response >>> ' + response.getBody());
 		if (String.isEmpty(response.getBody())) {
 			throw new CustomException(CustomException.RESPONSE_EMPTY);
 		}
-		Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
-		if (results.isEmpty()) {
+		//Map<String, Object> result = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
+		//System.debug(JSON.serialize(result));
+
+		Map<String, Object> obj = (Map<String, Object>) JSON.deserializeUntyped(body);
+		List<Object> items = (List<Object>) obj.get('items');
+
+		for (Object item : items) {
+			result.add(parseItem(item));
+		}
+
+		if (result.isEmpty()) {
 			throw new CustomException(CustomException.DESERIALIZED_RESULT_EMPTY);
 		}
-		return new WeatherDetails((String) results.get('temp'), (String) results.get('humidity'), (String) results.get('pressure'));
+		return new WeatherDetails((String) result.get('temp'), (String) result.get('humidity'), (String) result.get('pressure'));
+
 	}
 
 	public class WeatherDetails {
