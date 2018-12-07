@@ -12,7 +12,7 @@ public class SP_WeatherService {
 	}
 
 	public WeatherDetails makeCalloutByCity(final String city) {
-		HttpResponse response = HttpService.makeGetRequest(this.configs[0].EndPoint__c + city + '&units=metric' + '&APPID=' + this.configs[0].API_Key__c + '&mode=json');
+		HttpResponse response = HttpService.makeGetRequest(this.configs[0].EndPoint__c + 'q=' + city + '&units=metric' + '&APPID=' + this.configs[0].API_Key__c + '&mode=json');
 		if (String.isEmpty(response.getBody())) {
 			throw new CustomException(CustomException.RESPONSE_EMPTY);
 		}

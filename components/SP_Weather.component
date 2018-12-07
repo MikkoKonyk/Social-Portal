@@ -1,7 +1,9 @@
 <apex:component controller="SP_WeatherCtrl">
 
     <button onclick ="getWeather();">Get Weather</button>
-    <div id="temperatureId"></div>
+    <div id="temperatureId">Temperature </div>
+    <div id="humidityId">Humidity </div>
+    <div id="pressureId">Pressure </div>
     
     
     <script type="text/javascript">
@@ -12,9 +14,11 @@
                 city,  //input parameters
                 function (result, event) { //callback result
                     if (event.status) { //handle result
-                        document.getElementById('temperatureId').innerHTML +=  result.temp;
-                        console.log(result);
-                        alert(result);
+                        document.getElementById('temperatureId').innerHTML += result.temp;
+                        document.getElementById('humidityId').innerHTML +=  result.humidity;
+                        document.getElementById('pressureId').innerHTML +=  result.pressure;
+                        console.log(JSON.stringify(result));
+                        alert(JSON.stringify(result));
                     } else { //handle error
 
                     }
