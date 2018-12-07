@@ -21,12 +21,12 @@ public class SP_WeatherService {
 		System.debug('raw>>> ' + result);
 		System.debug('city property>>> ' + result.get('main'));
 
-        Map<String, Object> items = (Map<String, Object>) result.get('main');
+		Map<String, Object> items = (Map<String, Object>) result.get('main');
 
 		if (result.isEmpty()) {
 			throw new CustomException(CustomException.DESERIALIZED_RESULT_EMPTY);
 		}
-		return new WeatherDetails((Decimal)items.get('temp'), (Decimal)items.get('humidity'), (Decimal)items.get('pressure'));
+		return new WeatherDetails((Decimal) items.get('temp'), (Decimal) items.get('humidity'), (Decimal) items.get('pressure'));
 
 	}
 
@@ -41,7 +41,7 @@ public class SP_WeatherService {
 			this.pressure = pressure;
 		}
 
-        public WeatherDetails() {}
+		public WeatherDetails() { }
 
 	}
 }
