@@ -24,5 +24,6 @@
                     }
                 }, { buffer: true, escape: true, timeout: 120000 });
         }
+    var myElement = document.getElementById("temperatureId");
     </script>
 </apex:component>
