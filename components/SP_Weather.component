@@ -26,17 +26,17 @@
         <button onclick ="getWeather();">Get Weather</button>
         <img src ="C:\Users\Ademchuk\Desktop\weather.jpg"/>
         <div id="temperatureId">
-            <i id = "icon-wheather" class ="wi-thermometer"></i>
+            <i id = "icon-wheather" class ="wi wi-thermometer"></i>
             <p>Temperature</p> 
         </div>
             
         <div id="humidityId">
-            <i id = "icon-humidity" class ="wi-humidity"></i>
+            <i id = "icon-humidity" class ="wi wi-humidity"></i>
             <p>Humidity</p> 
         </div>
             
         <div id="pressureId">
-            <i id = "icon-humidity" class ="wi-barometer"></i>
+            <i id = "icon-humidity" class ="wi wi-barometer"></i>
             <p>Pressure</p>
         </div>
 
