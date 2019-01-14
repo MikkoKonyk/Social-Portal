@@ -1,14 +1,14 @@
 <apex:component controller="SP_WeatherCtrl">
-    
+    <apex:includeScript value="{! $Resource.Temperature }"/>
     <style type="text/css">
         .weather {
             border: 1px solid black;
             margin-top: 2rem;
             background-color: rgba(0, 0, 0, 0,5);
         }
-        #icon-wheather {
-            font-size: 5rem;
-            padding-top: 2rem;
+        #icon-temperature {
+            font-size: 1rem;
+            padding-top: 1rem;
         }
         #temperatureId {
             font-size: 0,5rem;
@@ -24,10 +24,12 @@
     
     <div class ="col-1 weather mx-auto">
         <button onclick ="getWeather();">Get Weather</button>
-        <img src ="C:\Users\Ademchuk\Desktop\weather.jpg"/>
+        
+        <img id ="weather-image" src ="C:\Users\Ademchuk\Desktop\weather.jpg"/>
+        
         <div id="temperatureId">
-            <i id = "icon-wheather" class ="wi wi-thermometer"></i>
-            <p>Temperature</p> 
+            <i id = "icon-temperature" url = "{!$Resource.Temperature}"></i>
+            <p> Temperature</p> 
         </div>
             
         <div id="humidityId">
