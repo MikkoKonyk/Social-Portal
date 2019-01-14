@@ -1,10 +1,46 @@
 <apex:component controller="SP_WeatherCtrl">
-
-    <button onclick ="getWeather();">Get Weather</button>
-    <div id="temperatureId">Temperature </div>
-    <div id="humidityId">Humidity </div>
-    <div id="pressureId">Pressure </div>
     
+    <style type="text/css">
+        .weather {
+            border: 1px solid black;
+            margin-top: 2rem;
+            background-color: rgba(0, 0, 0, 0,5);
+        }
+        #icon-wheather {
+            font-size: 5rem;
+            padding-top: 2rem;
+        }
+        #temperatureId {
+            font-size: 0,5rem;
+        }
+        #humidityId {
+            font-size: 0,5rem;
+        }
+        #pressureId {
+            font-size: 0,5rem;
+        }
+    </style>
+
+    
+    <div class ="col-1 weather mx-auto">
+        <button onclick ="getWeather();">Get Weather</button>
+        <img src ="C:\Users\Ademchuk\Desktop\weather.jpg"/>
+        <div id="temperatureId">
+            <i id = "icon-wheather" class ="wi-thermometer"></i>
+            <p>Temperature</p> 
+        </div>
+            
+        <div id="humidityId">
+            <i id = "icon-humidity" class ="wi-humidity"></i>
+            <p>Humidity</p> 
+        </div>
+            
+        <div id="pressureId">
+            <i id = "icon-humidity" class ="wi-barometer"></i>
+            <p>Pressure</p>
+        </div>
+
+    </div>
     
     <script type="text/javascript">
         function getWeather() {
@@ -24,6 +60,5 @@
                     }
                 }, { buffer: true, escape: true, timeout: 120000 });
         }
-    var myElement = document.getElementById("temperatureId");
     </script>
 </apex:component>
