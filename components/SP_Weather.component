@@ -5,27 +5,32 @@
             border: 1px solid black;
             margin-top: 1rem;
             background-color: rgba(0, 0, 0, 0,5);
+            color: gray;
+            border-radius: 5px;
         }
     </style>
 
     <div class ="container">
         <div class ="row">
-            <div class ="col-8 weather mx-auto">
+            <div class ="weather col-8 mx-auto">
                 <div class ="weather-head">
-                    <h1 id="location" class="text-center display-6">London, UK</h1>
+                    <h1 id="location" class="text-center"><strong>London, UK</strong></h1>
                     <button onclick ="getWeather();">Get Weather</button>
                         <apex:image url="{!URLFOR($Resource.WeatherIcons, 'weather.png')}" width="50" height="50"/>
                     <div class ="row"> 
-                        <div id="temperatureId">
-                            <apex:image url="{!URLFOR($Resource.WeatherIcons, 'temp.png')}" width="20" height="20"/>Temperature
+                        <div id="temperatureId" class = "col-4 text-center">
+                            <apex:image url="{!URLFOR($Resource.WeatherIcons, 'temp.png')}" width="20" height="20"/>
+                            <span>Temperature</span>
                         </div>
             
-                        <div id="humidityId">
-                            <apex:image url="{!URLFOR($Resource.WeatherIcons, 'humidity.png')}" width="20" height="20"/>Humidity
+                        <div id="humidityId" class = "col-4 text-center">
+                            <apex:image url="{!URLFOR($Resource.WeatherIcons, 'humidity.png')}" width="20" height="20"/>
+                            <span>Humidity</span>
                         </div>
             
-                        <div id="pressureId">
-                            <apex:image url="{!URLFOR($Resource.WeatherIcons, 'pressure.png')}" width="20" height="20"/>Pressure
+                        <div id="pressureId" class = "col-4 text-center">
+                            <apex:image url="{!URLFOR($Resource.WeatherIcons, 'pressure.png')}" width="20" height="20"/>
+                            <span>Pressure</span>
                         </div>
 
                     </div>
