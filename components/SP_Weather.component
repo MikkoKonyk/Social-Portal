@@ -12,8 +12,8 @@
 
     <div class ="container text-center">
         <div class ="row">
-            <div class ="weather col-8 mx-auto">
-                <div class ="weather-head">
+            <div class ="weather col-8 mx-auto text-center">
+                <div class ="weather-head text-center">
                     <h1 id="location" class="text-center"><strong>London, UK</strong></h1>
                     <button onclick ="getWeather();">Get Weather</button>
                         <apex:image url="{!URLFOR($Resource.WeatherIcons, 'weather.png')}" width="50" height="50"/>
