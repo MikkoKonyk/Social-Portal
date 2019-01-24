@@ -14,7 +14,10 @@
         <div class ="row">
             <div class ="weather col-8 mx-auto text-center">
                 <div class ="weather-head text-center">
-                    <h1 id="location" class="text-center"><strong>London, UK</strong></h1>
+                    <label for="city">City</label>
+                    <input id="city" type="text" name="city"/>
+                    <label for="countryCode">Country code</label>
+                    <input id="countryCode" type="text" name="countryCode"/>
                     <button onclick ="getWeather();">Get Weather</button>
                         <apex:image url="{!URLFOR($Resource.WeatherIcons, 'weather.png')}" width="50" height="50"/>
                     <div class ="row"> 
@@ -41,11 +44,13 @@
     
     <script type="text/javascript">
         function getWeather() {
-            var city = 'London';
+            var city = document.getElementById('city').value;
+            var countryCode = document.getElementById('countryCode').value;
             Visualforce.remoting.Manager.invokeAction(
                 '{!$RemoteAction.SP_WeatherCtrl.getWeatherByCity}', //function definition
                 city,  //input parameters
-                function (result, event) { //callback result
+                countryCode,
+            function (result, event) { //callback result
                     if (event.status) { //handle result
                         document.getElementById('temperatureId').innerHTML += result.temp;
                         document.getElementById('humidityId').innerHTML +=  result.humidity;
