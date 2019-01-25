@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowInternalUserLogin>true</allowInternalUserLogin>
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
+    <communityRoles/>
+    <disableReputationRecordConversations>false</disableReputationRecordConversations>
+    <emailSenderAddress>michael.konyk@gmail.com</emailSenderAddress>
+    <emailSenderName>SF Social Portal</emailSenderName>
+    <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
+    <enableDirectMessages>true</enableDirectMessages>
+    <enableGuestChatter>false</enableGuestChatter>
+    <enableGuestFileAccess>true</enableGuestFileAccess>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableNicknameDisplay>true</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <enableShowAllNetworkSettings>true</enableShowAllNetworkSettings>
+    <enableSiteAsContainer>false</enableSiteAsContainer>
+    <enableTalkingAboutStats>false</enableTalkingAboutStats>
+    <enableTopicAssignmentRules>true</enableTopicAssignmentRules>
+    <enableTopicSuggestions>false</enableTopicSuggestions>
+    <enableUpDownVote>false</enableUpDownVote>
+    <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
+    <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
+    <navigationLinkSet>
+        <navigationMenuItem>
+            <label>Topics</label>
+            <position>1</position>
+            <publiclyAvailable>true</publiclyAvailable>
+            <target>ShowMoreTopics</target>
+            <type>NavigationalTopic</type>
+        </navigationMenuItem>
+    </navigationLinkSet>
+    <networkMemberGroups>
+        <permissionSet>Admin</permissionSet>
+        <permissionSet>Portal_User</permissionSet>
+        <permissionSet>Unassigned</permissionSet>
+        <profile>customer community plus user</profile>
+        <profile>customer community user</profile>
+    </networkMemberGroups>
+    <networkPageOverrides>
+        <changePasswordPageOverrideSetting>VisualForce</changePasswordPageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>VisualForce</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Standard</homePageOverrideSetting>
+        <loginPageOverrideSetting>VisualForce</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>VisualForce</selfRegProfilePageOverrideSetting>
+    </networkPageOverrides>
+    <newSenderAddress>sp_admin@social-portal.com</newSenderAddress>
+    <picassoSite>SF_Social_Portal1</picassoSite>
+    <selfRegProfile>customer community user</selfRegProfile>
+    <selfRegistration>true</selfRegistration>
+    <sendWelcomeEmail>true</sendWelcomeEmail>
+    <site>SF_Social_Portal</site>
+    <status>UnderConstruction</status>
+    <tabs>
+        <defaultTab>home</defaultTab>
+        <standardTab>Chatter</standardTab>
+    </tabs>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>
