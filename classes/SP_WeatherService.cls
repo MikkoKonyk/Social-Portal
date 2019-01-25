@@ -13,15 +13,11 @@ public class SP_WeatherService {
 
 	public WeatherDetails makeCalloutByCity(String city, String countryCode) {
 		HttpResponse response = HttpService.makeGetRequest(this.configs[0].EndPoint__c + 'q=' + city + ',' + countryCode + '&units=metric' + '&APPID=' + this.configs[0].API_Key__c + '&mode=json');
-		System.debug('response >>> ' + response.getBody());
 		if (String.isEmpty(response.getBody())) {
 			throw new CustomException(CustomException.RESPONSE_EMPTY);
 		}
 		Map<String, Object> result = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
-		System.debug('raw>>> ' + result);
-		System.debug('city property>>> ' + result.get('main'));
-		System.debug('countryCode property>>> ' + result.get('main'));
-
+		
 		Map<String, Object> items = (Map<String, Object>) result.get('main');
 
 		if (result.isEmpty()) {
