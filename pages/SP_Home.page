@@ -1,10 +1,4 @@
 <apex:page standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
     <apex:slds />
-    <apex:form >
-        <apex:outputLabel value="City" for="city"/> 
-        <apex:inputText id="city" label="City"/>
-        <apex:outputLabel value="CountryCode" for="countryCode"/> 
-        <apex:inputText id="countryCode" label="CountryCode"/>
-    </apex:form>
     <c:SP_Weather />
 </apex:page>
