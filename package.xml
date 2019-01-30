@@ -153,5 +153,10 @@
         <members>Work%2Ecom Only User</members>
         <name>Profile</name>
     </types>
+    <types>
+        <members>SiteSamples</members>
+        <members>WeatherStaticResources</members>
+        <name>StaticResource</name>
+    </types>
     <version>42.0</version>
 </Package>
