@@ -27,6 +27,22 @@ public class SP_WeatherService {
 
 	}
 
+	public WeatherDetails makeCalloutByIpLocation(Double lat, Double lon) {
+		HttpResponse response = HttpService.makeGetRequest(this.configs[0].EndPoint__c + 'lat=' + lat + '&' + 'lon=' + lon + '&units=metric' + '&APPID=' + this.configs[0].API_Key__c + '&mode=json');
+		if (String.isEmpty(response.getBody())) {
+			throw new CustomException(CustomException.RESPONSE_EMPTY);
+		}
+		Map<String, Object> result = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
+
+		Map<String, Object> items = (Map<String, Object>) result.get('main');
+
+		if (result.isEmpty()) {
+			throw new CustomException(CustomException.DESERIALIZED_RESULT_EMPTY);
+		}
+		return new WeatherDetails((Decimal) items.get('temp'), (Decimal) items.get('humidity'), (Decimal) items.get('pressure'));
+
+	}
+
 	public class WeatherDetails {
 		public Decimal temp { get; set; }
 		public Decimal humidity { get; set; }
