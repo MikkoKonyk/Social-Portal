@@ -12,21 +12,21 @@
                     } else { 
                     }
                 }, { buffer: true, escape: true, timeout: 120000 });
-        } ;
+        };
 
         navigator.geolocation.getCurrentPosition(
         function getWeatherByIpLocation(position) {
-                    var lat = position.coords.latitude;;
-                    var lon = position.coords.longitude;
-                    SP_WeatherCtrl.getWeatherByIpLocation(
-        				lat,
-                        lon,
-                    function (result, event) {
-                            if (event.status) {
-                                document.getElementById('temperatureId').innerHTML = result.temp;
-                                document.getElementById('humidityId').innerHTML =  result.humidity;
-                                document.getElementById('pressureId').innerHTML =  result.pressure;
-                            } else {
-                            }
-                        });
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            SP_WeatherCtrl.getWeatherByIpLocation(
+                lat,
+                lon,
+            function (result, event) {
+                    if (event.status) {
+                        document.getElementById('temperatureId').innerHTML = result.temp;
+                        document.getElementById('humidityId').innerHTML =  result.humidity;
+                        document.getElementById('pressureId').innerHTML =  result.pressure;
+                    } else {
+                    }
+                });
         })
