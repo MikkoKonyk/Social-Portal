@@ -18,7 +18,7 @@
                         <div class = "col-4 text-center">
                             <span id="message"/>
                         </div>
-
+                        
                         <div class = "col-4 text-center">
                             <apex:image url="{!URLFOR($Resource.WeatherStaticResources, '/icons/temp.png')}" width="20" height="20"/>
                             <span>Temperature</span>
