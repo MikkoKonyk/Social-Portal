@@ -28,8 +28,6 @@ function getGeolocation() {
 };
 
 function showLocation(position) {
-    console.log('lat: ' + position.coords.latitude);
-    console.log('lon: ' + position.coords.longitude);
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     SP_WeatherCtrl.getWeatherByIpLocation(
@@ -49,6 +47,7 @@ function showLocation(position) {
 };
 
 function showError(error) {
-    console.log( 'getCurrentPosition returned error', error);
+    if (error.code == error.PERMISSION_DENIED) {
+        alert('User location canceled in browser');
+    }
 };
-
