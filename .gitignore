@@ -100,14 +100,6 @@ pages/SiteRegisterConfirm.page
 pages/SiteRegisterConfirm.page-meta.xml
 pages/SiteTemplate.page
 pages/SiteTemplate.page-meta.xml
-pages/SP_ChangePassword.page
-pages/SP_ChangePassword.page-meta.xml
-pages/SP_ForgotPassword.page
-pages/SP_ForgotPassword.page-meta.xml
-pages/SP_Login.page
-pages/SP_Login.page-meta.xml
-pages/SP_Registration.page
-pages/SP_Registration.page-meta.xml
 pages/StdExceptionTemplate.page
 pages/StdExceptionTemplate.page-meta.xml
 pages/Unauthorized.page
@@ -115,9 +107,3 @@ pages/Unauthorized.page-meta.xml
 pages/UnderConstruction.page
 pages/UnderConstruction.page-meta.xml
 profiles/*
-
-
-
-
-
-

@@ -1,0 +1,39 @@
+<apex:page controller="SP_LoginCtrl" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+
+    <apex:stylesheet value="{!URLFOR($Resource.LoginStaticResource, '/css/styles.css')}"/>
+
+    <apex:form>
+        <head>
+            <title>LOGIN PAGE</title>
+        </head>
+
+        <body>
+        <div class="message">
+            <apex:messages />
+        </div>
+
+        <div class="container text-center">
+
+            <div class="box slds-grid slds-size_1-of-4 slds-align_absolute-center">
+                <apex:image id="image" url="{!URLFOR($Resource.LoginStaticResource, '/icons/login.png')}"  width="80" height="80"/>
+                <div class="member slds-container_large slds-align_absolute-center">
+                    <span>MEMBER LOGIN</span>
+                </div>
+            </div>
+
+            <form>
+                <apex:inputtext value="{!email}" html-placeholder="Email"/>
+                <apex:inputsecret value="{!password}" html-placeholder="Password"/>
+                <apex:inputCheckbox styleClass="remember"/><a>Remember me</a>
+                <apex:outputLink styleClass="forgotPass">Forgot Password?</apex:outputLink>
+                <apex:commandbutton value="LOGIN" action="{!login}"/>
+                <div class="orLogin slds-container_large slds-align_absolute-center">
+                    <span>Or login with</span>
+                </div>
+                <p>Not a member?  <a href="{!$Page.SP_Registration}">Sign up now</a></p>
+            </form>
+
+        </div>
+        </body>
+    </apex:form>
+</apex:page>

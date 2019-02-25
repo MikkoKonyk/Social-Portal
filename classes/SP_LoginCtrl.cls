@@ -6,7 +6,7 @@ global with sharing class SP_LoginCtrl {
         String startUrl  = System.currentPageReference().getParameters().get('startURL');
         PageReference toHomePage = Site.login(email, password, startUrl);
         if (null == toHomePage) {
-            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.CONFIRM, 'You added incorrect data!'));
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'You added incorrect data!'));
             return null;
         }
         return toHomePage;
