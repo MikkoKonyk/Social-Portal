@@ -6,14 +6,14 @@ html, body {
 
 div.message {
     position: fixed;
-    top: 20%;
+    top: 5%;
     width: 250px;
     left: 37%;
     margin-top: -30px;
     color: red;
     background: white;
     font-weight: bold;
-}
+    }
 
 div.container {
     position: fixed;
@@ -28,6 +28,38 @@ div.container {
     font-size: 20px;
     }
 
+.facebook {
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    color: blue;
+    margin-left: 3px
+    }
+.faceImg {
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 18px
+    }
+
+.google {
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    margin-left: 3px
+    }
+.gooImg {
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 18px
+   }
+
 input[type=text],
 input[type=password] {
     background: rgb(232,232,232);
@@ -40,7 +72,7 @@ input[type=password] {
     height: 35px;
     }
 
-input[type=submit] { /*login*/
+.login {
     width: 210px;
     height: 35px;
     padding-left: 10px;
@@ -51,26 +83,25 @@ input[type=submit] { /*login*/
     font-weight: bold;
     color: white;
     background: -webkit-linear-gradient(45deg, rgba(187,72,191,1) 0%,rgba(237,56,183,1) 100%);
-}
+    }
 
 .remember {
     font-size: 14px;
     color: rgb(169,169,169);
     margin-left: 18px;
-}
+    }
 
 .forgotPass {
     font-size: 14px;
     color: rgb(169,169,169);
-    margin-left: 10px;
-}
+    margin-left: 5px;
+    }
 
 .signUp {
     font-size: 14px;
     color: rgb(169,169,169);
-
-}
-
+    margin-bottom: auto;
+    }
 
 div.member {
     color: black;
@@ -79,29 +110,29 @@ div.member {
     text-align: center;
     font-size: large;
     font-weight: bold;
-}
+    margin-bottom: auto;
+    }
 
 div.orLogin {
     color: rgb(169,169,169);
     width: 250px;
-    height: 80px;
+    height: 15px;
     text-align: center;
     font-size: 14px;
-    margin-top: +10px;
-}
+    margin-top: 10px;
+    }
 
 div.box {
     text-align:center;
-}
+    }
 
 a {
     font-size: 14px;
     color: rgb(169,169,169);
-}
+    }
 
 p {
     font-size: 14px;
     color: rgb(169,169,169);
     margin-left: 40px;
-}
-
+    }

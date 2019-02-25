@@ -1,14 +1,15 @@
 <apex:page controller="SP_LoginCtrl" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
 
     <apex:stylesheet value="{!URLFOR($Resource.LoginStaticResource, '/css/styles.css')}"/>
+    <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-    <apex:form>
+    <apex:form >
         <head>
             <title>LOGIN PAGE</title>
         </head>
 
         <body>
-        <div class="message">
+        <div class="message slds-align_absolute-center">
             <apex:messages />
         </div>
 
@@ -26,11 +27,18 @@
                 <apex:inputsecret value="{!password}" html-placeholder="Password"/>
                 <apex:inputCheckbox styleClass="remember"/><a>Remember me</a>
                 <apex:outputLink styleClass="forgotPass">Forgot Password?</apex:outputLink>
-                <apex:commandbutton value="LOGIN" action="{!login}"/>
+                <apex:commandbutton styleClass="login" value="LOGIN" action="{!login}"/>
                 <div class="orLogin slds-container_large slds-align_absolute-center">
                     <span>Or login with</span>
                 </div>
-                <p>Not a member?  <a href="{!$Page.SP_Registration}">Sign up now</a></p>
+
+                <apex:image styleClass="faceImg" url="{!URLFOR($Resource.LoginStaticResource, '/icons/facebook.png')}"/>
+                <apex:commandlink styleClass="facebook" value="Facebook"/>
+
+                <apex:image styleClass="gooImg" url="{!URLFOR($Resource.LoginStaticResource, '/icons/google.png')}"/>
+                <apex:commandlink styleClass="google" value="Google"/>
+
+                <p>Not a member?  <a class="signUp" href="{!$Page.SP_Registration}">Sign up now</a></p>
             </form>
 
         </div>
