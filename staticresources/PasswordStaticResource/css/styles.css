@@ -1,0 +1,111 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(239,59,185,1) 32%,rgba(64,87,173,1) 92%,rgba(64,87,173,1) 92%);
+    }
+
+div.container {
+    position: fixed;
+    width: 250px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -180px;
+    background: white;
+    }
+
+input[type=text],
+input[type=password] {
+    background: rgb(232,232,232);
+    color: black;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    width: 200px;
+    height: 35px;
+    }
+
+input[type=submit] { /*login*/
+    width: 210px;
+    height: 35px;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: -webkit-linear-gradient(45deg, rgba(187,72,191,1) 0%,rgba(237,56,183,1) 100%);
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(239,59,185,1) 32%,rgba(64,87,173,1) 92%,rgba(64,87,173,1) 92%);
+    }
+
+    div.container {
+    position: fixed;
+    width: 250px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -180px;
+    background: white;
+    font-size: 10px;
+    text-align:center;
+    }
+
+    .save {
+    width: 65px;
+    height: 35px;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: #64E01D;
+    text-align: center;
+    border-radius: 5px;
+    border-style: hidden;
+    margin-top: 30px;
+    }
+
+    div.chanPass {
+    color: black;
+    width: 250px;
+    height: 20px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 50px;
+    font-weight: bold;
+    }
+
+    input[type=text],
+    input[type=password] {
+    background: white;
+    color: black;
+    text-align: center;
+    margin-top: 12px;
+    width: 200px;
+    height: 35px;
+    border-style:solid;
+    border-width:thin;
+    }
+
+    div.message {
+    position: fixed;
+    top: 5%;
+    width: 250px;
+    left: 37%;
+    margin-top: -30px;
+    color: red;
+    background: white;
+    font-weight: bold;
+    }
+
+    div.box {
+    text-align:center;
+    }
+
