@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>ChangePasswordController</members>
+        <members>ChangePasswordControllerTest</members>
+        <members>ContactCtrlExtTest</members>
+        <members>ForgotPasswordController</members>
+        <members>ForgotPasswordControllerTest</members>
+        <members>SP_AccessRightsCtrl</members>
+        <members>SP_ChangePasswordCtrl</members>
+        <members>SP_HeaderCtrl</members>
+        <members>SP_LoginCtrl</members>
+        <members>SP_WeatherCtrl</members>
+        <members>SP_WeatherService</members>
+        <members>SiteLoginController</members>
+        <members>SiteLoginControllerTest</members>
+        <members>SiteRegisterController</members>
+        <members>SiteRegisterControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SP_AccessRights</members>
+        <members>SP_Footer</members>
+        <members>SP_Header</members>
+        <members>SP_Login</members>
+        <members>SP_Weather</members>
         <name>ApexComponent</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SP_ChangePassword</members>
+        <members>SP_ForgotPassword</members>
+        <members>SP_Home</members>
+        <members>SP_Login</members>
+        <members>SP_Registration</members>
+        <members>SP_Template</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -154,7 +177,13 @@
         <name>Profile</name>
     </types>
     <types>
+        <members>LoginStaticResource</members>
+        <members>PasswordStaticResource</members>
+        <members>PolicyTextStaticResource</members>
         <members>SiteSamples</members>
+        <members>TermsPolicyStaticResource</members>
+        <members>TermsTextStaticResource</members>
+        <members>WeatherIcons</members>
         <members>WeatherStaticResources</members>
         <name>StaticResource</name>
     </types>

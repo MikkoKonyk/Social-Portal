@@ -1,8 +1,8 @@
 <apex:page controller="SP_ChangePasswordCtrl" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
 
     <apex:stylesheet value="{!URLFOR($Resource.PasswordStaticResource, '/css/styles.css')}"/>
-    <apex:slds/>
-    <apex:form>
+    <apex:slds />
+    <apex:form >
         <head>
             <title>CHANGE PASSWORD</title> 
         </head>
