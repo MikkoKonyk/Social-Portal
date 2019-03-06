@@ -29,15 +29,6 @@
         <name>CommunityThemeDefinition</name>
     </types>
     <types>
-        <members>Social_Portal</members>
-        <members>Social_Portal_Lightning</members>
-        <name>CustomApplication</name>
-    </types>
-    <types>
-        <members>CustomLabels</members>
-        <name>CustomLabels</name>
-    </types>
-    <types>
         <members>Account</members>
         <members>AccountCleanInfo</members>
         <members>AccountContactRole</members>
@@ -48,7 +39,6 @@
         <members>Campaign</members>
         <members>CampaignMember</members>
         <members>Case</members>
-        <members>CaseComment</members>
         <members>CaseContactRole</members>
         <members>CollaborationGroup</members>
         <members>CollaborationGroupMember</members>
