@@ -1,0 +1,12 @@
+<apex:component controller="SP_LoginCtrl">
+
+    <div class ="loginPage text-center">
+            <div class ="login col-8 mx-auto text-center">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email"/>
+                    <label for="password">Password</label>
+                    <input id="password" type="text" name="password"/>
+                    <button onclick ="login();">LOGIN</button>
+            </div>
+    </div>
+</apex:component>

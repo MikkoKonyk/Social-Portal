@@ -1,52 +1,46 @@
 <apex:component controller="SP_AccessRightsCtrl">
 
     <apex:stylesheet value="{!URLFOR($Resource.TermsPolicyStaticResource, '/css/styles.css')}"/>
-    <apex:stylesheet value="{!URLFOR($Resource.TermsTextStaticResource, 'terms.txt')}"/>
 
-    <apex:form >
-        <body id="body">
-        <div class ="cont slds-align_absolute-center">
+    <apex:slds />
 
-        <apex:inputCheckbox styleClass="terms"/>
-        <a>I hereby declare to have read and accepted the</a><a> </a>
-        <apex:commandLink styleClass="linkTerms" value="Terms of use" reRender="panelTerms" action="{!showPopup}"/>
-        <a>for the TRAXEE application</a>
+        <body id="body" class="slds-align_absolute-center">
 
-        <p/>
+        <div class="cont slds-grid slds-grid_vertical slds-align-middle slds-size_1-of-1">
+            
+            <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
+                <apex:inputCheckbox styleClass="terms slds-align-middle"/>
+                <div>
+                    <apex:outputText>I hereby declare to have read and accepted the 
+                    <apex:commandLink styleClass="linkTerms" value=" Terms of use " action="{!showPopup}">
+                        <apex:param name="popup" value="terms" assignTo="{!test}"/>
+                    </apex:commandLink> 
+                    for the TRAXEE application</apex:outputText>
+                </div>
+            </div>
 
-        <apex:inputCheckbox styleClass="policy"/>
-        <a>I hereby declare to have read and accepted the</a><a> </a>
-        <apex:commandLink styleClass="linkPolicy" value="Privacy policy" reRender="panelPolicy" action="{!showPopup}"/>
-        <a>for the TRAXEE application</a>
+            <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
+                <apex:inputCheckbox styleClass="policy slds-align_absolute-center"/>
+                <div>
+                    <apex:outputText>I hereby declare to have read and accepted the
+                    <apex:commandLink styleClass="linkPolicy" value=" Privacy policy " reRender="popup" action="{!showPopup}">
+                        <apex:param name="popup" value="policy" assignTo="{!info}"/>
+                    </apex:commandLink> 
+                    for the TRAXEE application</apex:outputText>
+                </div>
+            </div>
+        
+        </div>
 
-        <apex:outputPanel id="panelTerms">
-            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
-                <apex:outputText styleClass="textNameTerms" value="TERMS OF USE"/>
-                <apex:commandButton styleClass="exitButtonTerms" action="{!closePopup}" rerender="panelTerms" image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}"/>
-                <div class="line"/>
-                <p/>
-                <apex:outputPanel styleClass="panelTerms" layout="block" rendered="{!displayPopup}">
-                    <apex:outputText styleClass="textTerms" value="{!termsInfo}" escape="false" lang=""/>
+            <div class="slds-grid slds-align_absolute-center">
+                <apex:outputPanel id="popup"> 
+                <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                <apex:commandButton styleClass="exitButton" action="{!closePopup}" rerender="popup" image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}"/>
+                <apex:outputText value="{!popup}" escape="false"/>
+                <apex:commandButton styleClass="button" value="OK" action="{!closePopup}" rerender="popup"/>
                 </apex:outputPanel>
-                <p/>
-            <apex:commandButton styleClass="buttonTerms" value="OK" action="{!closePopup}" rerender="panelTerms"/>
-            </apex:outputPanel>
-        </apex:outputPanel>
-
-        <apex:outputPanel id="panelPolicy">
-            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
-                <apex:outputText styleClass="textNamePolicy" value="PRIVACY POLICY"/>
-                <apex:commandButton styleClass="exitButtonPolicy" action="{!closePopup}" rerender="panelPolicy" image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}"/>
-                <div class="line"/>
-                <p/>
-                <apex:outputText styleClass="textPolicy" value="{!termsInfo}" escape="false"/>
-                <p/>
-                <apex:commandButton styleClass="buttonPolicy" value="OK" action="{!closePopup}" rerender="panelPolicy"/>
-            </apex:outputPanel>
-        </apex:outputPanel>
-
-    </div>
+                </apex:outputPanel>
+            </div>
+            
         </body>
-    </apex:form>
-
 </apex:component>

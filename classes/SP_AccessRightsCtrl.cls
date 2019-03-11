@@ -1,22 +1,20 @@
 public with sharing class SP_AccessRightsCtrl {
 
     public boolean displayPopup { get; set; }
-    public String termsInfo;
-
+    public String test { get; set; }
+	public String popup { get {
+		if (String.isBlank(this.popup)) {
+		this.popup = [SELECT Body FROM StaticResource WHERE Name =: (this.test == 'terms') ? 'Terms' : 'Policy'].Body.toString();
+	}
+        return this.popup;
+	}
+	set; }
+	
     public void closePopup() {
         displayPopup = false;
     }
 
     public void showPopup() {
         displayPopup = true;
-    }
-
-    public String getTermsInfo() {
-        if (String.isBlank(this.termsInfo)) {
-            StaticResource sr = [select Body from StaticResource where Name = 'TermsTextStaticResource'];
-            this.termsInfo = EncodingUtil.base64Encode(sr.Body);
-            System.debug('resource ' + termsInfo);
-        }
-        return this.termsInfo;
     }
 }

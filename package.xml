@@ -19,7 +19,6 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>SP_AccessRights</members>
         <members>SP_Footer</members>
         <members>SP_Header</members>
         <members>SP_Login</members>
@@ -179,8 +178,10 @@
     <types>
         <members>LoginStaticResource</members>
         <members>PasswordStaticResource</members>
+        <members>Policy</members>
         <members>PolicyTextStaticResource</members>
         <members>SiteSamples</members>
+        <members>Terms</members>
         <members>TermsPolicyStaticResource</members>
         <members>TermsTextStaticResource</members>
         <members>WeatherIcons</members>
