@@ -11,9 +11,9 @@
             <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
                 <apex:inputCheckbox styleClass="terms slds-align-middle"/>
                 <div>
-                    <apex:outputText>I hereby declare to have read and accepted the 
+                    <apex:outputText >I hereby declare to have read and accepted the 
                     <apex:commandLink styleClass="linkTerms" value=" Terms of use " action="{!showPopup}">
-                        <apex:param name="popup" value="terms" assignTo="{!test}"/>
+                        <apex:param name="popup" value="terms" assignTo="{!content}"/>
                     </apex:commandLink> 
                     for the TRAXEE application</apex:outputText>
                 </div>
@@ -22,25 +22,39 @@
             <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
                 <apex:inputCheckbox styleClass="policy slds-align_absolute-center"/>
                 <div>
-                    <apex:outputText>I hereby declare to have read and accepted the
-                    <apex:commandLink styleClass="linkPolicy" value=" Privacy policy " reRender="popup" action="{!showPopup}">
-                        <apex:param name="popup" value="policy" assignTo="{!info}"/>
+                    <apex:outputText >I hereby declare to have read and accepted the
+                    <apex:commandLink styleClass="linkPolicy" value=" Privacy policy " action="{!showPopup}">
+                        <apex:param name="popup" value="policy" assignTo="{!content}"/>
                     </apex:commandLink> 
                     for the TRAXEE application</apex:outputText>
                 </div>
             </div>
         
         </div>
+    </body>
 
+    <body>
             <div class="slds-grid slds-align_absolute-center">
                 <apex:outputPanel id="popup"> 
-                <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
-                <apex:commandButton styleClass="exitButton" action="{!closePopup}" rerender="popup" image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}"/>
-                <apex:outputText value="{!popup}" escape="false"/>
-                <apex:commandButton styleClass="button" value="OK" action="{!closePopup}" rerender="popup"/>
-                </apex:outputPanel>
+                <apex:outputPanel styleClass="backgroundPopup" rendered="{!displayPopUp}"/> 
+                
+                    <div class="slds-grid slds-grid_vertical slds-align_absolute-center slds-size_1-of-1">
+                        <apex:outputPanel styleClass="custPopup slds-size_1-of-2" layout="block" rendered="{!displayPopUp}">
+                            <div class="slds-grid slds-grid_align-end">
+                                <div class="col slds-m-bottom_small">
+                                    <apex:commandButton styleClass="exitButton" action="{!closePopup}" rerender="popup" image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}"/>
+                                </div>
+                            </div>    
+                                <apex:outputText value="{!content}" escape="false"/>
+                            <div class="col slds-align_absolute-center slds-m-bottom_small">
+                                <apex:commandButton styleClass="button" value="OK" action="{!closePopup}" rerender="popup"/>
+                            </div>  
+                        </apex:outputPanel>
+                    </div> 
+
                 </apex:outputPanel>
             </div>
             
         </body>
+
 </apex:component>
