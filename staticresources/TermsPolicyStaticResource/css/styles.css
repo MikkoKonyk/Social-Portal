@@ -1,0 +1,81 @@
+div.cont {
+    position: fixed;
+    height: 20px;
+    top: 50%;
+    margin-left:25%;
+    margin-top: 280px;
+    color: black;
+}
+
+.termsLink, .policyLink {
+    color: white;
+}
+
+.custPopup{
+    position: fixed;
+    width: 650px;
+    height: 560px;
+    top: 25%;
+    border: 2px;
+    background: white;
+    font-size: 10px;
+    text-align:center;
+    border-radius: 15px;
+}
+
+.panelTerms {
+    position: fixed;
+    width: 600px;
+    height: 350px;
+    top: 35%;
+    margin-left: 25px;
+    background: white;
+    font-size: 10px;
+    text-align:center;
+    overflow: auto;
+}
+
+.buttonPolicy, .buttonTerms {
+    width: 65px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: #64E01D;
+    text-align: center;
+    border-radius: 5px;
+    border-style: hidden;
+    margin-top: 440px;
+}
+
+.textPolicy, .textTerms {
+    text-align:center;
+    font-size: 15px;
+    color: #2945AA;
+}
+
+.linkTerms, .linkPolicy {
+    color: white;
+}
+
+.textNameTerms, .textNamePolicy{
+    text-align:justify;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2945AA;
+    margin-left:30%;
+}
+
+.exitButtonTerms, .exitButtonPolicy{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    position: absolute-left;
+    margin-left:30%;
+}
+
+.line {
+    border-width:3px;
+    border-bottom-style:outset;
+    border-color: aliceblue;
+}
