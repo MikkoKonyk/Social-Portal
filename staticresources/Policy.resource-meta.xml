@@ -2,5 +2,5 @@
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
     <cacheControl>Public</cacheControl>
     <contentType>text/html</contentType>
-    <description>Text for &quot;Terms of use&quot;</description>
+    <description>html file with text for Privacy Policy</description>
 </StaticResource>
