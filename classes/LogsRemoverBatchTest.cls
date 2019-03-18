@@ -1,7 +1,7 @@
 @isTest
 private class LogsRemoverBatchTest {
 
-    @TestSetup
+   @TestSetup
     private static void setupTestData() {
         List<Log__c> testLogs = new List<Log__c>();
         for (Integer i = 0; i < 200; i++) {
@@ -11,7 +11,7 @@ private class LogsRemoverBatchTest {
     }
 
     @isTest
-    private static void testLogRemoverBatch() {
+    private static void testLogsRemoverBatch() {
         Test.startTest();
         Database.executeBatch(new LogsRemoverBatch(), 200);
         Test.stopTest();

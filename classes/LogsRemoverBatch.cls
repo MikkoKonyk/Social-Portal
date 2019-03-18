@@ -1,31 +1,33 @@
 global class LogsRemoverBatch implements Database.Batchable<sObject> {
 	
-	private List<Log__c> listRecords;
+	private List<Log__c> deletedLogs;
 
-    public LogsRemoverBatch() {}
+    public LogsRemoverBatch() {} 
  
     global Database.QueryLocator start(Database.BatchableContext context) {
-        return Database.getQueryLocator('SELECT Id FROM Log__c');
+        return Database.getQueryLocator('SELECT Id, Name, Company_Name__c, ContactID__c, Email__c, Status_Code__c, Error_Message__c, Summary__c, Type__c, User__c FROM Log__c');
     }
 
     global void execute(Database.BatchableContext context, List<Log__c> scope) {
         List<Log__c> logsToDelete = new List<Log__c>();
             for (Log__c log : scope) {
-                if (log.Type__c=='ERROR' && log.User__c==NULL) {
+                if (log.Type__c=='ERROR' && log.User__c==NULL) { 
                     logsToDelete.add(log);
             }
         }
-		listRecords = logsToDelete;
-		Database.DeleteResult[] drList =  Database.delete(logsToDelete, false);     
+		deletedLogs = logsToDelete;
+		Database.DeleteResult[] drList =  Database.delete(logsToDelete, false);
+		Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+        String[] toAddresses = new String[] {'demalviv@gmail.com', 'mkonyk@noltic.com'};
+        mail.setToAddresses(toAddresses);
+        mail.setSubject('LogsRemoverBatch results');
+		mail.setHtmlBody(createBody(deletedLogs));
+		System.debug(mail);
+        Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });     
     }
     
     global void finish(Database.BatchableContext context) {
-        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-        String[] toAddresses = new String[] {'demalviv@gmail.com'};
-        mail.setToAddresses(toAddresses);
-        mail.setSubject('LogsRemoverBatch results');
-		mail.setHtmlBody(createBody(listRecords));
-        Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
+        
     }
 
 	private static String createBody(final List<Log__c> logsToDelete) {
