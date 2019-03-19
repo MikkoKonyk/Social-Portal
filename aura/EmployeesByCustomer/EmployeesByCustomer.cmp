@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="public" controller="EmployeesController">
+    <aura:attribute name="isError" type="Boolean" access="private" default="false"/>
+    <aura:attribute name="errorMessage" type="String" access="private" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card>
+        <div class="container slds-m-around_medium">
+            <aura:if isTrue="{!v.isError}">
+                <div>
+                    <p>{!v.errorMessage}</p>
+                </div>
+            </aura:if>
+            <div onkeyup="{!c.searchAccounts}" class="slds-col slds-size_1-of-6">
+                <lightning:input
+                        aura:id="search"
+                        name="enter-search"
+                        label="Search when user hits the 'enter' key"
+                        type="search"
+                />
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>
