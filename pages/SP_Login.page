@@ -1,47 +1,64 @@
 <apex:page controller="SP_LoginCtrl" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.LoginStaticResource, '/css/styles.css')}"/>
+        <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <apex:slds/>
+        <title>SP - LOGIN</title>
+    </head>
+    <body>
+        <div class="slds-grid slds-align_absolute-center slds-col slds-size_1-of-2 container">
+            <div class="slds-grid_vertical slds-m-vertical_large">
 
-    <apex:stylesheet value="{!URLFOR($Resource.LoginStaticResource, '/css/styles.css')}"/>
-    <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                <div class="slds-col slds-grid_vertical slds-size_1-of-2 slds-align_absolute-center">
+                    <apex:image styleClass="slds-col slds-size_1-of-3" id="image" url="{!URLFOR($Resource.LoginStaticResource, '/icons/login.png')}"  width="80" height="80"/>
+                    <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                        <span class="slds-text-heading_medium">MEMBER LOGIN</span>
+                    </div>
+                </div>
 
-    <apex:form >
-        <head>
-            <title>LOGIN PAGE</title>
-        </head>
+                <div class="slds-col slds-size_1-of-1 slds-m-top_medium slds-align_absolute-center sp-errors">
+                    <apex:messages />
+                </div>
 
-        <body>
-        <div class="message slds-align_absolute-center">
-            <apex:messages />
-        </div>
-
-        <div class="container text-center">
-
-            <div class="box slds-grid slds-size_1-of-4 slds-align_absolute-center">
-                <apex:image id="image" url="{!URLFOR($Resource.LoginStaticResource, '/icons/login.png')}"  width="80" height="80"/>
-                <div class="member slds-container_large slds-align_absolute-center">
-                    <span>MEMBER LOGIN</span>
+                <apex:form>
+                <div class="slds-col slds-grid_vertical slds-size--1-of-1 slds-align_absolute-center">
+                    <apex:inputtext value="{!email}" html-placeholder="Email" styleClass="slds-input slds-m-top_medium" html-autofocus="true"/>
+                    <apex:inputsecret value="{!password}" html-placeholder="Password" styleClass="slds-input slds-m-top_medium"/>
+                    <apex:commandbutton styleClass="slds-button slds-button_success slds-m-top_medium slds-size_1-of-1" value="LOGIN" action="{!login}"/>
+                    <div class="slds-col slds-grid slds-size_1-of-1 slds-m-top_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-align-content-center slds-text-align--center">
+                            <apex:inputCheckbox id="rememberMe" />
+                            <apex:outputLabel for="rememberMe" value="Remember me?" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-text-align--center">
+                            <apex:outputLink >Forgot Password?</apex:outputLink>
+                        </div>
+                    </div>
+                </div>
+                </apex:form>
+                <div class="slds-col slds-grid_vertical slds-m-top_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                        <span class="slds-text-body_regular">Or login with</span>
+                    </div>
+                    <div class="slds-col slds-grid slds-size_1-of-2 slds-m-top_medium slds-align_absolute-center">
+                        <div class="slds-col">
+                            <button class="slds-button slds-button_neutral slds-m-right_small sp-btn-width">
+                                <apex:image styleClass="slds-button__icon slds-button__icon_left" url="{!URLFOR($Resource.LoginStaticResource, '/icons/facebook.png')}"/>
+                                Facebook
+                            </button>
+                        </div>
+                        <div class="slds-col">
+                            <button class="slds-button slds-button_neutral slds-m-left_small sp-btn-width">
+                                <apex:image styleClass="slds-button__icon slds-button__icon_left" url="{!URLFOR($Resource.LoginStaticResource, '/icons/google.png')}"/>
+                                Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-grid slds-m-top_xx-large slds-size_1-of-2 slds-align_absolute-center">
+                    <p class="slds-text-heading_small">Not a member?<a class="slds-text-heading_small slds-m-left_x-small" href="{!$Page.SP_Registration}">Sign up now</a></p>
                 </div>
             </div>
-
-            <form>
-                <apex:inputtext value="{!email}" html-placeholder="Email"/>
-                <apex:inputsecret value="{!password}" html-placeholder="Password"/>
-                <apex:inputCheckbox styleClass="remember"/><a>Remember me</a>
-                <apex:outputLink styleClass="forgotPass">Forgot Password?</apex:outputLink>
-                <apex:commandbutton styleClass="login" value="LOGIN" action="{!login}"/>
-                <div class="orLogin slds-container_large slds-align_absolute-center">
-                    <span>Or login with</span>
-                </div>
-
-                <apex:image styleClass="faceImg" url="{!URLFOR($Resource.LoginStaticResource, '/icons/facebook.png')}"/>
-                <apex:commandlink styleClass="facebook" value="Facebook"/>
-
-                <apex:image styleClass="gooImg" url="{!URLFOR($Resource.LoginStaticResource, '/icons/google.png')}"/>
-                <apex:commandlink styleClass="google" value="Google"/>
-
-                <p>Not a member?  <a class="signUp" href="{!$Page.SP_Registration}">Sign up now</a></p>
-            </form>
-
         </div>
-        </body>
-    </apex:form>
+    </body>
 </apex:page>
