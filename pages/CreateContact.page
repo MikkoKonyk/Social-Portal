@@ -1,0 +1,50 @@
+<apex:page standardController="Contact" extensions="ContactCtrlExt">
+    <apex:form id="form">
+        <apex:pageBlock id="createContact" title="New Contact" mode="edit">
+            <apex:pageBlockSection title="Personal Information" columns="2">
+                <apex:inputField value="{!Contact.Salutation}"/>
+                <apex:inputField value="{!Contact.Email}"/>
+                <apex:inputField value="{!Contact.FirstName}"/>
+                <apex:inputField value="{!Contact.Birthday__c}"/>
+                <apex:inputField value="{!Contact.LastName}"/>
+                <apex:inputField value="{!Contact.Phone}"/>
+                <apex:inputField value="{!Contact.Country__c}"/>
+                <apex:inputField value="{!Contact.Languages__c}"/>
+            </apex:pageBlockSection>
+
+            <apex:pageblocksection title="Company Information" columns="2" id="companyInfo">
+                <apex:inputfield value="{!Contact.AccountId}" label="Company"/>
+                <apex:actionregion >
+                    <apex:outputLabel value="Portal User" for="Portal User"/>
+                    <apex:inputfield value="{!Contact.PortalUser__c}">
+                        <apex:actionsupport event="onclick" rerender="companyInfo"/>
+                    </apex:inputfield>
+                    <br/>
+                    <apex:outputLabel value="SelfRegistered" for="SelfRegistered" rendered="{!Contact.PortalUser__c}"/>
+                    <apex:inputfield value="{!Contact.SelfRegistered__c}" rendered="{!Contact.PortalUser__c}"/>
+
+                </apex:actionregion>
+                <apex:inputfield value="{!Contact.Department__c}"/>
+                <apex:outputtext value=" "/>
+                <apex:inputfield value="{!Contact.Job_title__c}"/>
+                <apex:outputtext value=" "/>
+                <apex:inputfield value="{!Contact.FingerprintId__c}"/>
+                <apex:outputtext value=" "/>
+                <apex:inputfield value="{!Contact.Level__c}"/>
+            </apex:pageblocksection>
+
+            <apex:pageBlockButtons >
+
+                <apex:commandButton value="Save" action="{!save}" id="saveButton"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton"/>
+
+            </apex:pageBlockButtons>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+    <apex:outputPanel rendered="{!NOT(Contact.Id == NULL)}">
+        <c:FileUpload objId="{!Contact.Id}"/>
+    </apex:outputPanel>
+</apex:page>

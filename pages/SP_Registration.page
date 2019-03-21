@@ -1,4 +1,101 @@
 <apex:page standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+
     <apex:slds />
-    <title>REGISTRATION PAGE</title>
+    <apex:form >   
+        <head>
+            <title>REGISTRATION</title>
+        </head>
+
+
+        <div class="container slds-align_absolute-center slds-grid_vertical slds-size_1-of-5"> 
+
+            <div class="slds-col slds-align_absolute-center slds-size_1-of-5 slds-m-bottom_large">
+                    <apex:image id="image" url="{!URLFOR($Resource.PasswordStaticResource, '/icons/password.png')}"/>
+            </div>
+             
+            <div class="slds-col chanPass slds-align_absolute-center slds-size_1-of-2 slds-m-bottom_small">
+                <span>SIGN UP</span> 
+            </div>  
+             
+            <div class="slds-col slds-align_absolute-center slds-m-bottom_small"> 
+                    <apex:inputText id="firstName" html-placeholder="FIRST NAME"/>
+            </div> 
+
+            <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
+                    <apex:inputText id="lastName" html-placeholder="LAST NAME"/> 
+            </div>
+
+            <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
+                    <apex:inputText id="email" html-placeholder="EMAIL"/>
+            </div>
+            
+            <div class="slds-col slds-align_absolute-center slds-m-bottom_small">
+                    <select>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+            </div>
+
+             
+            <div class="slds-grid slds-m-bottom_small">
+                <div class="cancel slds-p-horizontal_medium">    
+                    <apex:commandbutton styleClass="cancel slds-align_absolute-center" value="CANCEL"/>
+                </div>
+                <div class="slds-p-horizontal_medium"/> 
+                <div class="regis slds-p-horizontal_medium"> 
+                    <apex:commandbutton styleClass="regis slds-align_absolute-center" value="REGISTER"/>
+                </div>
+            </div>
+
+        </div>
+    </apex:form>
+     
+    <style type="text/css">
+        html {
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(239,59,185,1) 32%,rgba(64,87,173,1) 92%,rgba(64,87,173,1) 92%);
+        }
+
+        .regis {
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            background: #64E01D;
+            text-align: center;
+            border-radius: 5px;
+            border-style: hidden;
+        }
+
+        .cancel {
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            background: #A0A0A0;
+            text-align: center;
+            border-radius: 5px;
+            border-style: hidden;
+        }
+
+        div.chanPass {
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        input[type=text],
+        input[type=password] {
+            background: white;
+            color: black;
+            text-align: center;
+            border-style: solid;
+            border-width: thin;
+        }
+
+        .container {
+            background: white;
+        }
+    </style>
+
+    
+
 </apex:page>
