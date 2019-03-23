@@ -7,11 +7,11 @@ public with sharing class SP_LoginCtrl {
     }
 
     public PageReference login() {
-        if (!Pattern.matches(EMAIL_PATTERN, this.email)) {
-            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, String.format('Email is not valid. Please use correct format: {0}'
-                                                                                    , new String[] { 'example@example.com' })));
-            return null;
-        }
+//        if (!Pattern.matches(EMAIL_PATTERN, this.email)) {
+//            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, String.format('Email is not valid. Please use correct format: {0}'
+//                                                                                    , new String[] { 'example@example.com' })));
+//            return null;
+//        }
         List<User> users = [SELECT Id FROM User WHERE Email = :this.email];
         if (users.isEmpty()) {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, String.format('There is no active user in the system with email: {0}'

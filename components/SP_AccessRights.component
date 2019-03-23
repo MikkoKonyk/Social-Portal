@@ -4,7 +4,6 @@
     <apex:slds/>
 
     <body>
-        <apex:form>
         <div class="slds-grid slds-grid_vertical slds-align-middle slds-size_1-of-1 slds-m-top_large">  
             <div class="slds-col slds-m-left_none slds-align_absolute-center slds-m-bottom_small">
                 <apex:inputCheckbox styleClass="terms slds-align-middle slds-m-right_x-small"/>
@@ -34,6 +33,5 @@
             
             </div>
         </div>
-        </apex:form>
     </body>
 </apex:component>
