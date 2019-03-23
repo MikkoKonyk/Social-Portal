@@ -4,6 +4,7 @@
     <apex:slds/>
 
     <body>
+        <apex:form>
         <div class="slds-grid slds-grid_vertical slds-align-middle slds-size_1-of-1 slds-m-top_large">  
             <div class="slds-col slds-m-left_none slds-align_absolute-center slds-m-bottom_small">
                 <apex:inputCheckbox styleClass="terms slds-align-middle slds-m-right_x-small"/>
@@ -30,8 +31,9 @@
                     <apex:outputText styleClass="slds-modal__content slds-p-around_medium" id="modal-content-id-1" value="bla-bla-bla"/>
                     <apex:commandButton styleClass="slds-button slds-button_icon slds-button_icon-small slds-panel__close" value="OK"/>
                 </apex:outputPanel>
+            
             </div>
         </div>
-
+        </apex:form>
     </body>
 </apex:component>

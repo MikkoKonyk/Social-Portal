@@ -22,7 +22,7 @@ public with sharing class SP_LoginCtrl {
         if (null == toHomePage) {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Cannot log you in.'));
             return null;
-        }
+        } 
         return toHomePage;
     }
 }
