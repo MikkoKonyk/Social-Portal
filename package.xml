@@ -43,6 +43,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>SP_AccessRights</members>
         <members>SP_Footer</members>
         <members>SP_Header</members>
         <members>SP_Login</members>
