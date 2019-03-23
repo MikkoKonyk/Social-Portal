@@ -22,7 +22,7 @@
 
                 <apex:form>
                 <div class="slds-col slds-grid_vertical slds-size--1-of-1 slds-align_absolute-center">
-                    <apex:inputtext value="{!email}" html-placeholder="Email" styleClass="slds-input slds-m-top_medium" html-autofocus="true" required="true"/>
+                    <apex:inputtext value="{!email}" html-placeholder="your_email@example.com" styleClass="slds-input slds-m-top_medium" html-autofocus="true" required="true"/>
                     <apex:inputsecret value="{!password}" html-placeholder="Password" styleClass="slds-input slds-m-top_medium"/>
                     <apex:commandbutton styleClass="slds-button slds-button_success slds-m-top_medium slds-size_1-of-1" value="LOGIN" action="{!login}"/>
                     <div class="slds-col slds-grid slds-size_1-of-1 slds-m-top_medium">

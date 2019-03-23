@@ -1,0 +1,37 @@
+<apex:component controller="SP_AccessRightsCtrl">
+
+    <apex:stylesheet value="{!URLFOR($Resource.TermsPolicyStaticResource, '/css/styles.css')}"/>
+    <apex:slds/>
+
+    <body>
+        <div class="slds-grid slds-grid_vertical slds-align-middle slds-size_1-of-1 slds-m-top_large">  
+            <div class="slds-col slds-m-left_none slds-align_absolute-center slds-m-bottom_small">
+                <apex:inputCheckbox styleClass="terms slds-align-middle slds-m-right_x-small"/>
+                    <apex:outputText> I hereby declare to have read and accepted the 
+                    <apex:commandLink styleClass="slds-m-horizontal_xxx-small" value="Terms of use" action="{!showPopup}" reRender="panel"/>
+                    for the TRAXEE application</apex:outputText>
+            </div>
+
+            <div class="slds-col slds-m-left_none slds-align_absolute-center slds-m-bottom_small">
+                <apex:inputCheckbox styleClass="policy slds-align_absolute-center slds-m-right_x-small"/>
+                    <apex:outputText>I hereby declare to have read and accepted the
+                    <apex:commandLink styleClass="slds-m-horizontal_xxx-small" value="Privacy policy" action="{!showPopup}" reRender="panel"/>
+                    for the TRAXEE application</apex:outputText>
+            </div>
+        
+        </div>
+
+        <div class="panelGrid demo-only slds-modal slds-slide-down-cancel" style="height: 640px;">
+            <div class="slds-modal__container slds-align_absolute-center slds-col slds-size_1-of-2 container">
+        
+                <apex:outputPanel styleClass="popupBackground slds-modal__container slds-is-open" layout="block" rendered="{!displayPopUp}"/>
+                <apex:outputPanel styleClass="panel slds-panel slds-size_large" rendered="{!displayPopup}">
+                    <apex:commandButton styleClass="sslds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}"/>
+                    <apex:outputText styleClass="slds-modal__content slds-p-around_medium" id="modal-content-id-1" value="bla-bla-bla"/>
+                    <apex:commandButton styleClass="slds-button slds-button_icon slds-button_icon-small slds-panel__close" value="OK"/>
+                </apex:outputPanel>
+            </div>
+        </div>
+
+    </body>
+</apex:component>
