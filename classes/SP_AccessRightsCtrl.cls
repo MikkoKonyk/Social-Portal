@@ -5,8 +5,7 @@ public with sharing class SP_AccessRightsCtrl {
     public String content {
         get {
             if (String.isBlank(this.content)) {
-                this.content = SELECT Body FROM StaticResource WHERE Name =: 'Terms';
-				return content; 
+                return [SELECT Body FROM StaticResource WHERE Name =: (this.popup == 'terms') ? 'Terms' : 'Policy'].Body.toString();
             } else {
 				return [SELECT Body FROM StaticResource WHERE Name =: (this.popup == 'policy') ? 'Policy' : 'Terms'].Body.toString();
         }
