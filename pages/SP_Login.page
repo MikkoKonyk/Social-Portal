@@ -2,7 +2,7 @@
     <head>
         <apex:stylesheet value="{!URLFOR($Resource.LoginStaticResource, '/css/styles.css')}"/>
         <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <apex:slds/>
+        <apex:slds />
         <title>SP - LOGIN</title>
     </head>
     <body>
@@ -20,7 +20,7 @@
                     <apex:messages />
                 </div>
 
-                <apex:form>
+                <apex:form >
                 <div class="slds-col slds-grid_vertical slds-size--1-of-1 slds-align_absolute-center">
                     <apex:inputtext value="{!email}" html-placeholder="your_email@example.com" styleClass="slds-input slds-m-top_medium" html-autofocus="true" required="true"/>
                     <apex:inputsecret value="{!password}" html-placeholder="Password" styleClass="slds-input slds-m-top_medium"/>

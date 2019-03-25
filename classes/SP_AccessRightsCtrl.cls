@@ -1,7 +1,7 @@
 public with sharing class SP_AccessRightsCtrl {
 
     public Boolean displayPopup { get; set; }
-	public String popup { get; set; }
+	public String popup			{ get; set; }
     public String content {
         get {
             if (String.isBlank(this.content)) {
