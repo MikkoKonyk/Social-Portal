@@ -5,30 +5,44 @@
    
     <body>
         <div class="slds-grid slds-grid_vertical slds-align-middle slds-size_1-of-1 slds-m-top_large">  
+            
             <div class="slds-col slds-m-left_none slds-align_absolute-center slds-m-bottom_small">
-                <apex:inputCheckbox styleClass="terms slds-align-middle slds-m-right_x-small"/>
+                <apex:inputCheckbox styleClass="slds-align-middle slds-m-right_x-small"/>
                     <apex:outputText > I hereby declare to have read and accepted the 
-                    <apex:commandLink id="terms" styleClass="terms slds-m-horizontal_xxx-small" value="Terms of use" action="{!showPopup}" reRender="tstpopup"/>
+                    <apex:commandLink id="terms" styleClass="terms slds-m-horizontal_xxx-small" value="Terms of use" 
+                                      action="{!showPopup}" reRender="tstpopup">
+                        <apex:param name="popup" value="terms" assignTo="{!popup}"/>
+                    </apex:commandLink>
                     for the TRAXEE application</apex:outputText>
             </div>
 
             <div class="slds-col slds-m-left_none slds-align_absolute-center slds-m-bottom_small">
-                <apex:inputCheckbox styleClass="policy slds-align_absolute-center slds-m-right_x-small"/>
+                <apex:inputCheckbox styleClass="slds-align_absolute-center slds-m-right_x-small"/>
                     <apex:outputText >I hereby declare to have read and accepted the
-                    <apex:commandLink id="policy" styleClass="slds-m-horizontal_xxx-small" value="Privacy policy" action="{!showPopup}" reRender="tstpopup"/>
+                    <apex:commandLink id="policy" styleClass="policy slds-m-horizontal_xxx-small" value="Privacy policy" 
+                                      action="{!showPopup}" reRender="tstpopup">
+                        <apex:param name="popup" value="policy" assignTo="{!popup}"/>
+                    </apex:commandLink>
                     for the TRAXEE application</apex:outputText>
-            </div> 
-          
-        </div>  
-    </body>        
-        <apex:outputPanel styleClass="tstpopup slds-size_1-of-1">
-            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            </div>     
+           
+        </div>   
+              
+         <apex:outputPanel id="tstpopup">   
+            <apex:outputPanel id="popupBackground" styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/> 
             <apex:outputPanel styleClass="popup" layout="block" rendered="{!displayPopUp}">
-                <apex:commandButton styleClass="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse slds-icon_x-small" title="Close" 
-                                    image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}" rendered="{!displayPopUp}" action="{!closePopup}"/>   
-                <apex:outputText styleClass="slds-m-bottom_small" value="{!content}" rendered="{!displayPopUp}"/>            
-                <apex:commandButton styleClass="slds-align_absolute-center" value="CLOSE" action="{!closePopup}" rerender="tstpopup"/>
+                <div class="slds-clearfix">
+                    <apex:commandButton styleClass="slds-icon_x-small slds-m-bottom_large slds-float_right" 
+                                        image="{!URLFOR($Resource.TermsPolicyStaticResource, '/icons/exit.png')}" action="{!closePopup}"/>
+                </div>   
+                <div class="slds-scrollable slds-align_absolute-center" style="height: 12rem; width: 25rem;">
+                    <apex:outputPanel  style="height: 12rem; width: 25rem;">
+                        <apex:outputText styleClass="slds-text-longform slds-m-around_x-small" value="{!content}" escape="false"/>
+                    </apex:outputPanel>
+                </div>            
+                <apex:commandButton styleClass="slds-button slds-button_brand slds-m-top_medium slds-align_absolute-center slds-m-bottom_small" value="CLOSE" action="{!closePopup}" reRender="tstpopup"/>
             </apex:outputPanel>
-        </apex:outputPanel>       
-       
-</apex:component>  
+        </apex:outputPanel>            
+   
+    </body>         
+</apex:component>

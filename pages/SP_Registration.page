@@ -1,5 +1,6 @@
-<apex:page standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+<apex:page controller="SP_RegistrationCtrl" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
     <head>
+        <apex:stylesheet value="{!URLFOR($Resource.RegistrationStaticResource, '/css/styles.css')}"/>
         <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <apex:slds />
         <title>SP - REGISTRATION</title>
@@ -9,58 +10,37 @@
             <div class="slds-grid_vertical slds-m-vertical_large">
 
                 <div class="slds-col slds-grid_vertical slds-size_1-of-2 slds-align_absolute-center">
-                    <apex:image styleClass="slds-col slds-m-bottom_small slds-size_1-of-4" id="image" url="{!URLFOR($Resource.PasswordStaticResource, '/icons/password.png')}"  width="80" height="80"/>
+                    <apex:image styleClass="slds-col slds-m-bottom_small slds-size_1-of-4" id="image" 
+                                url="{!URLFOR($Resource.PasswordStaticResource, '/icons/password.png')}"  width="80" height="80"/>
                     <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
-                        <span class="slds-text-heading_medium">SIGN UP</span>
+                        <span class="slds-text-heading_medium">SIGN UP</span> 
                     </div>
                 </div>
 
-            <apex:form >
+                <div class="slds-col slds-size_1-of-1 slds-m-top_medium slds-align_absolute-center sp-errors">
+                    <apex:messages />
+                </div> 
+
+            <apex:form > 
                 <div class="slds-col slds-grid_vertical slds-size--1-of-1 slds-align_absolute-center">
-                    <apex:inputText html-placeholder="FIRST NAME" styleClass="slds-input slds-m-top_medium slds-size_1-of-2" html-autofocus="true" required="true"/>
-                    <apex:inputText html-placeholder="LAST NAME" styleClass="slds-input slds-m-top_medium slds-size_1-of-2" html-autofocus="true" required="true"/> 
-                    <apex:inputText html-placeholder="EMAIL" styleClass="slds-input slds-m-top_medium slds-size_1-of-2" html-autofocus="true" required="true"/>
-                     <apex:selectList id="chooseGender" label="GENDER" size="1" styleClass="slds-select slds-m-top_medium slds-size_1-of-2">
-                        <apex:selectOption itemValue="male" itemLabel="Male"/>
+                    <apex:inputText html-placeholder="FIRST NAME" styleClass="slds-input slds-m-top_medium slds-size_1-of-2" html-autofocus="true"/>
+                    <apex:inputText html-placeholder="LAST NAME" styleClass="slds-input slds-m-top_medium slds-size_1-of-2"/> 
+                    <apex:inputText value="{!email}" html-placeholder="EMAIL" styleClass="slds-input slds-m-top_medium slds-size_1-of-2"/>
+                     <apex:selectList size="0" styleClass="slds-select slds-m-top_medium slds-size_1-of-2">
+                        <apex:selectOption itemValue="GENDER" itemLabel="GENDER"/>
+                        <apex:selectOption itemValue="male" itemLabel="Male"/>  
                         <apex:selectOption itemValue="female" itemLabel="Female"/>
                     </apex:selectList>
-                    <c:SP_AccessRights/>
+                    <c:SP_AccessRights />
                     <div class="slds-button-group-row slds-size--1-of-1">
-                        <apex:commandbutton styleClass="slds-button slds-button-group-item slds-button_neutral slds-m-top_medium slds-size_1-of-2" value="CANCEL"/>
-                        <apex:commandbutton styleClass="slds-button slds-button-group-item slds-button_success slds-m-top_medium slds-size_1-of-2" value="REGISTER"/>
+                        <apex:commandbutton styleClass="slds-button slds-button-group-item slds-button_neutral slds-m-top_medium slds-size_1-of-2"
+                                            value="CANCEL"/>
+                        <apex:commandbutton styleClass="slds-button slds-button-group-item slds-button_success slds-m-top_medium slds-size_1-of-2" 
+                                            value="REGISTER" action="{!register}"/>
                     </div>
                 </div>
             </apex:form>
-
             </div>
         </div>
-     
-    <style type="text/css"> 
-        html, body {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(239,59,185,1) 32%,rgba(64,87,173,1) 92%,rgba(64,87,173,1) 92%);
-        }
-
-        body {
-            position: relative;
-        }
-
-
-        .container {
-            background: white;
-            border-radius: 10px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .sp-btn-width {
-            width: 11rem;
-        } 
-    </style>
-
-    
-        </body>
+    </body>
 </apex:page>
