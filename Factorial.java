@@ -11,7 +11,7 @@ public class Factorial {
                 for(int i=number; i>0; i--){
                     result*=i;
                 }
-                System.out.println("Factorial of number " + number + " equals " + result);
+                System.out.println("Factorial of number " + number + " = " + result);
         } else {
             System.out.println("Error! You added not number!");
         }
